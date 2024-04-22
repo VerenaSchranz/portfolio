@@ -22,5 +22,5 @@ import { NavigationComponent } from './shared/components/navigation/navigation.c
 })
 
 export class AppComponent {
-  title = 'portfolio';
+  title = 'Verena Schranz';
 }

@@ -1,7 +1,57 @@
+@import url(./colors.scss);
+@import url(./fonts.scss);
+
+$max-width-page: 1400px;
+
 body {
     font-family: "Montserrat";
+    background-color: #fff;
 }
 
 h1 {
     font-family: "Baloo 2";
 }
+
+/* .main {
+    max-width: 1400px;
+    margin: auto;
+    padding: 20px;
+    // background-color: #f2f2f266;
+} */
+
+.col-12 {
+    width: 100%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+* {
+    scrollbar-width: auto;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  *::-webkit-scrollbar-track {
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+  }
