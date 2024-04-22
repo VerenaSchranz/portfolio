@@ -1,1 +1,118 @@
-h1 {background-color: deeppink;}
+@import "../../../app/shared/style/colors.scss";
+@import "../../../app/shared/style/mixins.scss";
+@import "../../../app/shared/style/base.scss";
+
+.main {
+  max-width: $max-width-page;
+  margin: auto;
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffffff 0%, #d7ffec 100%);
+  width: 100%;
+  &-btn-box {
+    display: flex;
+    justify-content: space-between;
+    height: 40vh;
+
+    &-scroll {
+        text-transform: uppercase;
+        font-family: "Montserrat";
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        color: #57E8A2;
+        font-weight: 500;
+        font-size: 23px;
+        flex-direction: column;
+        
+        &-line {
+            width: 2px;
+            height: 100%;
+            background-color: #57E8A2;
+            margin-top: 30px;
+        }
+    }
+
+   
+    &-social {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: end;
+      margin: 48px 30px;
+      width: 60px;
+      a {
+        transition: padding-right 0.3s ease;
+        padding-right: 0;
+        &:hover {
+            padding-right: 15px;
+            
+        }
+        &:not(:last-child) {
+          padding-bottom: 25px;
+        }
+      }
+    }
+  }
+  &-circle {
+    @include circle(892px, $primary-color, $secondary-color);
+    width: 892px;
+    height: 892px;
+    border-radius: 50%;
+    position: absolute;
+    top: -119px;
+    left: -30%;
+  }
+  &-circle-little {
+    @include circle(206px, $primary-color, $secondary-color);
+    width: 206px;
+    height: 206px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -110px;
+  }
+  
+
+  &-left {
+    position: relative;
+    width: 200%;
+    img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      left: -40%;
+      position: absolute;
+    }
+
+    &-img {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      object-fit: cover;
+    }
+  }
+  &-content {
+    display: flex;
+    height: 60vh;
+    justify-content: start;
+    flex-direction: column;
+    padding-top: 40%;
+  }
+  &-h1 {
+    font-size: 64px;
+  }
+  &-h2 {
+    &-1 {
+      font-size: 97px;
+    }
+    &-2 {
+      font-size: 90px;
+    }
+  }
+}
