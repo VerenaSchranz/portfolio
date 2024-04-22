@@ -44,7 +44,14 @@
       align-items: flex-end;
       justify-content: end;
       margin: 48px 30px;
+      width: 60px;
       a {
+        transition: padding-right 0.3s ease;
+        padding-right: 0;
+        &:hover {
+            padding-right: 15px;
+            
+        }
         &:not(:last-child) {
           padding-bottom: 25px;
         }
@@ -56,11 +63,19 @@
     width: 892px;
     height: 892px;
     border-radius: 50%;
-    background: linear-gradient(120deg, #57e8a2, #33b476);
     position: absolute;
     top: -119px;
     left: -30%;
   }
+  &-circle-little {
+    @include circle(206px, $primary-color, $secondary-color);
+    width: 206px;
+    height: 206px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -110px;
+  }
+  
 
   &-left {
     position: relative;
