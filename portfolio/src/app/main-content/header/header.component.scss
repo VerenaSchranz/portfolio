@@ -9,35 +9,34 @@
 
 .header {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   background: linear-gradient(to bottom, #ffffff 0%, #d7ffec 100%);
   width: 100%;
   &-btn-box {
     display: flex;
     justify-content: space-between;
-    height: 40vh;
+    height: 25vh;
 
     &-scroll {
-        text-transform: uppercase;
-        font-family: "Montserrat";
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        color: #57E8A2;
-        font-weight: 500;
-        font-size: 23px;
-        flex-direction: column;
-        
-        &-line {
-            width: 2px;
-            height: 100%;
-            background-color: #57E8A2;
-            margin-top: 30px;
-        }
+      text-transform: uppercase;
+      font-family: "Montserrat";
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: #57e8a2;
+      font-weight: 500;
+      font-size: 23px;
+      flex-direction: column;
+
+      &-line {
+        width: 2px;
+        height: 100%;
+        background-color: #57e8a2;
+        margin-top: 30px;
+      }
     }
 
-   
     &-social {
       display: flex;
       flex-direction: column;
@@ -49,8 +48,7 @@
         transition: padding-right 0.3s ease;
         padding-right: 0;
         &:hover {
-            padding-right: 15px;
-            
+          padding-right: 15px;
         }
         &:not(:last-child) {
           padding-bottom: 25px;
@@ -58,33 +56,42 @@
       }
     }
   }
+
   &-circle {
-    @include circle(892px, $primary-color, $secondary-color);
-    width: 892px;
-    height: 892px;
-    border-radius: 50%;
-    position: absolute;
-    top: -119px;
-    left: -30%;
+    &-desk {
+      @include circle(892px, $primary-color, $secondary-color);
+      width: 892px;
+      height: 892px;
+      border-radius: 50%;
+      position: absolute;
+      top: -139px;
+      left: -40%;
+    }
+    &-mobile {
+      @include circle(630px, $primary-color, $secondary-color);
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      display: none;
+    }
   }
+
   &-circle-little {
     @include circle(206px, $primary-color, $secondary-color);
-    width: 206px;
-    height: 206px;
     border-radius: 50%;
     position: absolute;
+    left: 50%;
     bottom: -110px;
+    z-index: 2;
   }
-  
 
   &-left {
     position: relative;
-    // width: 200%;
     img {
-    //   width: 100%;
-      height: 100vh;
+      height: 80vh;
       object-fit: cover;
-      left: -40%;
+      left: -30%;
       position: absolute;
     }
 
@@ -93,16 +100,16 @@
       z-index: 2;
       top: 0;
       left: 0;
-      height: 100vh;
+      height: 90vh;
       object-fit: cover;
     }
   }
   &-content {
     display: flex;
-    height: 60vh;
+    height: 55vh;
     justify-content: start;
     flex-direction: column;
-    padding-top: 40%;
+    padding-top: 20%;
   }
   &-h1 {
     font-size: 64px;
@@ -117,122 +124,255 @@
   }
 }
 
-  /* Große Geräte (Desktops, 992px bis 1199px) */
-  @media (min-width: 992px) and (max-width: 1199.98px) { 
-    // Stile für große Geräte
-  }
-
-  
-  /* Mittlere Geräte (Tablets, 576px bis 991px) */
-  @media (min-width: 576px) and (max-width: 991.98px) { 
-    .header {
-        &-btn-box {
-          display: flex;
-          justify-content: space-between;
-          height: 40vh;
-      
-          &-scroll {
-              text-transform: uppercase;
-              font-family: "Montserrat";
-              width: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: flex-start;
-              color: #57E8A2;
-              font-weight: 500;
-              font-size: 23px;
-              flex-direction: column;
-              
-              &-line {
-                  width: 2px;
-                  height: 100%;
-                  background-color: #57E8A2;
-                  margin-top: 30px;
-              }
-          }
-      
-         
-          &-social {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: end;
-            margin: 48px 30px;
-            width: 60px;
-            a {
-              transition: padding-right 0.3s ease;
-              padding-right: 0;
-              &:hover {
-                  padding-right: 15px;
-                  
-              }
-              &:not(:last-child) {
-                padding-bottom: 25px;
-              }
-            }
-          }
-        }
-        &-circle {
-          @include circle(892px, $primary-color, $secondary-color);
-          width: 892px;
-          height: 892px;
-          border-radius: 50%;
-          position: absolute;
-          top: -119px;
-          left: -30%;
-        }
-        &-circle-little {
-          @include circle(206px, $primary-color, $secondary-color);
-          width: 206px;
-          height: 206px;
-          border-radius: 50%;
-          position: absolute;
-          bottom: -110px;
-        }
-        
-      
-        &-left {
-          position: relative;
-          // width: 200%;
-          img {
-          //   width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            left: -40%;
-            position: absolute;
-          }
-      
-          &-img {
-            position: absolute;
-            z-index: 2;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            object-fit: cover;
-          }
-        }
-        &-content {
-          display: flex;
-          height: 60vh;
-          justify-content: start;
-          flex-direction: column;
-          padding-top: 40%;
-        }
-        &-h1 {
-          font-size: 64px;
-        }
-        &-h2 {
-          &-1 {
-            font-size: 97px;
-          }
-          &-2 {
-            font-size: 90px;
-          }
-        }
+@media (max-width: 1399px) {
+  .header {
+    &-circle-desk {
+      @include circle(892px, $primary-color, $secondary-color);
+      border-radius: 50%;
+      position: absolute;
+      top: -119px;
+      left: -30%;
+    }
+    &-content {
+      padding-top: 30%;
+      margin: 0 0px 0px 70px;
+    }
+    &-h1 {
+      font-size: 54px;
+    }
+    &-h2 {
+      &-1 {
+        font-size: 87px;
       }
+      &-2 {
+        font-size: 80px;
+      }
+    }
+  }
 }
 
-  /* Kleine Geräte (Handys, kleiner als 576px) */
-@media (max-width: 575.98px) { 
-    // Stile für kleine Geräte
+/* Kleine Geräte (Handys, kleiner als 576px) */
+@media (max-width: 1119px) {
+  .header {
+    &-circle {
+      &-desk {
+        @include circle(892px, $primary-color, $secondary-color);
+        border-radius: 50%;
+        position: absolute;
+        top: -119px;
+        left: -50%;
+      }
+    }
+
+    &-content {
+      padding-top: 30%;
+      margin: 0 0px 0px 70px;
+    }
+    &-h1 {
+      font-size: 54px;
+    }
+    &-h2 {
+      &-1 {
+        font-size: 87px;
+      }
+      &-2 {
+        font-size: 80px;
+      }
+    }
   }
+}
+
+@media (max-width: 1050px) {
+  .header {
+    &-btn-box-scroll {
+      margin-left: 110px;
+    }
+  }
+}
+
+@media (max-width: 1019px) {
+    .main {
+      width: 100%;
+    }
+    .header {
+      height: 90vh;
+      &-row {
+        flex-direction: column-reverse;
+      }
+      &-circle-desk {
+        display: none;
+      }
+      &-circle-mobile {
+        display: block;
+        position: absolute;
+        z-index: 0;
+        left: -30%;
+        top: -20%;
+      }
+  
+      &-left {
+        position: relative;
+        overflow: hidden;
+        img {
+          object-fit: cover;
+          left: 0;
+          position: relative;
+          width: 100%;
+          height: auto;
+          height: 90vh;
+        }
+        &-img {
+          height: auto;
+        }
+      }
+      &-btn-box {
+        display: none;
+      }
+  
+      &-content {
+        position: absolute;
+        padding-top: 170px;
+        height: auto;
+        top: -26%;
+        left: 0%;
+        margin: 140px 0px 0px 9px;
+        z-index: 1;
+        &:before {
+          content: "";
+          position: absolute;
+          top: -30px;
+          left: -40%;
+          border-radius: 50%;
+          @include circle(630px, $primary-color, $secondary-color);
+          z-index: -1;
+        }
+      }
+      &-left {
+        img {
+          top: 145px;
+        }
+      }
+  
+      &-h1 {
+        line-height: 1;
+        font-size: 56px;
+        color: $font-color-light;
+      }
+      &-h2 {
+        &-1 {
+          font-size: 68px;
+          color: $font-color-light;
+        }
+        &-2 {
+          font-size: 62px;
+          color: $font-color-light;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .header {
+      overflow: hidden;
+      &-row {
+        flex-direction: column-reverse;
+      }
+      &-circle-desk {
+        display: none;
+      }
+      &-circle-mobile {
+        display: block;
+        position: absolute;
+        z-index: 0;
+        left: -30%;
+        top: -20%;
+      }
+  
+      &-left {
+        position: relative;
+        overflow: hidden;
+        img {
+          object-fit: cover;
+          left: 0;
+          position: relative;
+          width: 100%;
+          height: auto;
+          height: 90vh;
+        }
+        &-img {
+          height: auto;
+        }
+      }
+      &-btn-box {
+        display: none;
+      }
+      
+      &-row {
+        overflow: hidden;
+      }
+      &-content {
+        position: absolute;
+        padding-top: 170px;
+        height: auto;
+        top: -26%;
+        left: 0%;
+        margin: 20% 0 0 10%;
+        z-index: 1;
+        &:before {
+          content: "";
+          position: absolute;
+          position: absolute;
+          left: -89%;
+          top: -20%;
+          border-radius: 50%;
+          @include circle(700px, $primary-color, $secondary-color);
+          z-index: -1;
+        }
+      }
+      &-left {
+        img {
+          top: 145px;
+        }
+      }
+  
+      &-h1 {
+        line-height: 1;
+        font-size: 46px;
+        color: $font-color-light;
+      }
+      &-h2 {
+        &-1 {
+          font-size: 68px;
+          color: $font-color-light;
+        }
+        &-2 {
+          font-size: 62px;
+          color: $font-color-light;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .header {
+        &-h1 {
+            font-size: 36px;
+          }
+          &-h2 {
+            &-1 {
+              font-size: 58px;
+            }
+            &-2 {
+              font-size: 52px;
+            }
+          }
+    }
+  }
+
+  /*MediaQuery Height*/
+
+  @media (max-width: 800px) {
+    .header {
+
+    }
+}
