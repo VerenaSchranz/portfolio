@@ -6,6 +6,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

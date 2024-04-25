@@ -128,3 +128,19 @@ $secondary-font: "Baloo 2";
   src: url("../../../assets/font/montserrat/montserrat-v26-latin-900.woff2")
     format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+h3 {
+  text-transform: uppercase;
+  font-family: $secondary-font;
+  font-size: 96px;    
+  color: $white;
+  text-align: center;
+  font-weight: 900;
+  line-height: 1.0;
+  margin: 0 0 100px 0;
+}
+
+@media (max-width: 470px) {
+  h3 {
+    font-size: 66px;    }
+}

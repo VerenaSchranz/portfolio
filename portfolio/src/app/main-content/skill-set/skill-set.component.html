@@ -1,1 +1,9 @@
-<p>skill-set works!</p>
+<section class="skillset">
+<h3>Skill set</h3>
+<div class="skillset-row">
+  <div class="skillset-div" *ngFor="let skill of skillIcons">
+    <img [src]="getSkillIconPath(skill.icon)" alt="{{ skill.name }}" />
+    <p>{{ skill.name }}</p>
+  </div>
+</div>
+</section>
