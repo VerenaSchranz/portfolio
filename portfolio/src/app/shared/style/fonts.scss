@@ -140,7 +140,8 @@ h3 {
   margin: 0 0 100px 0;
 }
 
-@media (max-width: 470px) {
-  h3 {
-    font-size: 66px;    }
+@media (max-width: 1199px) {
+  h2, h3 {
+    font-size: 50px;    
+  }
 }
