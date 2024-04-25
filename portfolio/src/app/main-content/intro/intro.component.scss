@@ -1,7 +1,18 @@
+@import "../../../app/shared/style/colors.scss";
+@import "../../../app/shared/style/fonts.scss";
+@import "../../../app/shared/style/mixins.scss";
+@import "../../../app/shared/style/base.scss";
+
 .intro {
-    padding: 150px 0;
+    padding: 180px 18px;
+    position: relative;
     h2 {
         font-size: 115px;
+    }
+    &-circle-little {
+        @include circle(100px, $primary-color, $secondary-color);
+        position: absolute;
+        top: 70px;
     }
     &-flex {
         display: flex;
@@ -23,11 +34,19 @@
 @media (max-width: 1399px) {
     .intro {
         padding: 150px 30px;
+        &-circle-little {
+            top: 30px;
+        }
     }
 }
 
 @media (max-width: 1199px) {
     .intro {
+
+        &-circle-little {
+            right: 10%;
+        }
+
         h2 {
             font-size: 50px;
             line-height: 1.2;
@@ -36,6 +55,15 @@
     .row {
         &-intro {
             flex-direction: column;
+        }
+    }
+}
+@media (max-width: 720px) {
+    .intro {
+
+        &-circle-little {
+            @include circle(50px, $primary-color, $secondary-color);
+            right: 10%;
         }
     }
 }

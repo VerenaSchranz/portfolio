@@ -8,7 +8,7 @@
 .header {
   position: relative;
   height: 100vh;
-  background: linear-gradient(to bottom, $white 0%, #d7ffec 100%);
+  background: linear-gradient(to bottom, $white 0%, $linear-color 100%);
   width: 100%;
   &-btn-box {
     display: flex;
@@ -425,6 +425,9 @@
 
 @media (max-width: 720px) {
   .header {
+    &-circle-little {
+      left: 10%;
+    }
     &-h1 {
       font-size: 36px;
     }

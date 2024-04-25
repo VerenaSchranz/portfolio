@@ -8,6 +8,6 @@
   }
   /**/
   .circle {
-    @include circle(100px, #57E8A2, #33B476);
+    @include circle(100px, $primary-color, $secondary-color);
   }
   

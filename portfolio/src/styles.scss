@@ -3,6 +3,9 @@
 @import "../../portfolio/src/app/shared/style/mixins.scss";
 @import "../../portfolio/src/app/shared/style/colors.scss";
 
+body {
+  margin: 0;
+}
 .circle {
   @include circle(100px, $primary-color, $secondary-color);
 }
@@ -22,3 +25,4 @@ h2 {
     line-height: 1.0;
     margin: 0;
 }
+
