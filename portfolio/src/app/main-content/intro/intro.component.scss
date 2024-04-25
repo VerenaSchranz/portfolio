@@ -1,0 +1,14 @@
+.intro {
+    padding: 150px 0;
+    h2 {
+        font-size: 115px;
+    }
+}
+
+.row {
+    &-intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

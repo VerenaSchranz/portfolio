@@ -1,11 +1,7 @@
-@import "./app/shared/style/base.scss";
-@import "./app/shared/style/colors.scss";
-@import "./app/shared/style/fonts.scss";
-@import "./app/shared/style/mixins.scss";
-
-/*Circle*/
-
-@import "./app/shared/style/mixins.scss";
+@import "../../portfolio/src/app/shared/style/base.scss";
+@import "../../portfolio/src/app/shared/style/fonts.scss";
+@import "../../portfolio/src/app/shared/style/mixins.scss";
+@import "../../portfolio/src/app/shared/style/colors.scss";
 
 .circle {
   @include circle(100px, $primary-color, $secondary-color);

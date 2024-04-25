@@ -1,5 +1,5 @@
-@import url(./colors.scss);
-@import url(./fonts.scss);
+@import "../../shared/style/colors.scss";
+@import "../../shared/style/fonts.scss";
 
 $max-width-page: 1400px;
 
@@ -11,20 +11,22 @@ body {
 h1 {
     font-family: "Baloo 2";
 }
-
-/* .main {
-    max-width: 1400px;
+.main {
+    max-width: $max-width-page;
     margin: auto;
-    padding: 20px;
-    // background-color: #f2f2f266;
-} */
+  }
+
+p {
+    font-size: 23px;
+    line-height: 1.8;
+}
 
 .col-12 {
     width: 100%;
 }
 
 .col-6 {
-    width: 50%;
+    width: 45%;
 }
 
 .col-3 {
@@ -60,4 +62,9 @@ h1 {
     .col-6 {
         width: 100%;
     }
+  }
+
+  button {
+    border: 2px solid $primary-color;
+
   }
