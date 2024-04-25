@@ -183,7 +183,7 @@
   }
 }
 
-@media (max-width: 1399px) {
+@media (min-width: 1400px) and (max-height: 800px) {
   .header {
     &-circle-desk {
       @include circle(700px, $primary-color, $secondary-color);
@@ -191,6 +191,11 @@
       position: absolute;
       top: -119px;
       left: -30%;
+    }
+    &-left {
+      img {
+        left: 0%;
+      }
     }
     &-content {
       margin: 0 0px 0px 70px;
@@ -204,6 +209,16 @@
       }
       &-2 {
         font-size: 80px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) and (min-height: 800px) {
+  .header {
+    &-left {
+      img {
+        left: -70%;
       }
     }
   }
