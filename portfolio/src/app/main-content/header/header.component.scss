@@ -1,4 +1,5 @@
 @import "../../../app/shared/style/colors.scss";
+@import "../../../app/shared/style/fonts.scss";
 @import "../../../app/shared/style/mixins.scss";
 @import "../../../app/shared/style/base.scss";
 
@@ -16,7 +17,7 @@
 
     &-scroll {
       text-transform: uppercase;
-      font-family: "Montserrat";
+      font-family: $secondary-font;
       width: 80%;
       display: flex;
       align-items: center;
@@ -86,7 +87,7 @@
     img {
       height: 100vh;
       object-fit: cover;
-      left: -30%;
+      left: -130%;
       position: absolute;
     }
 

@@ -8,7 +8,7 @@
 }
 
 h1 {
-    font-family: "Baloo 2";
+    font-family: $secondary-font;
     font-weight: 400;
     color: $primary-color;
     margin: 0;
@@ -16,7 +16,7 @@ h1 {
 
 h2 {
     text-transform: uppercase;
-    font-family: "Baloo 2";    
+    font-family: $secondary-font;    
     color: $primary-color;
     font-weight: 900;
     line-height: 1.0;
