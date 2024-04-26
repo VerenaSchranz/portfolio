@@ -64,8 +64,8 @@ p {
     }
   }
 
-  button {
-    padding: 20px;
+  button, .button {
+    padding: 15px 30px 15px 30px;
     color: $primary-color;
     font-family: $primary-font;
     display: inline-block;

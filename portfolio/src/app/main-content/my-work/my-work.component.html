@@ -1,17 +1,39 @@
 <section class="my-work">
-    <div class="main">
-      <div class="row-my-work">
+  <div class="main">
+    <div class="row-my-work-intro">
+      <div class="col-6">
+        <div class="my-work-circle-little"></div>
+        <h2>My work</h2>
+        <p>
+          Explore a selection of my work here - Interact with projects to see my
+          skills in action.
+        </p>
+      </div>
+      <div class="col-6">
+        <div class="my-work-circle-big"></div>
+      </div>
+    </div>
+    <div class="row-my-work">
+      <div class="my-work-div" *ngFor="let project of projects">
         <div class="col-6">
-            <div class="my-work-circle-little"></div>
-          <h2>My work</h2>
-          <p>
-            Explore a selection of my work here - Interact with projects to see my skills in action.
-          </p>
+          <img
+            src="assets/img/pc_mockup/{{ project.mockup }}"
+            alt="{{ project.name }}"
+          />
         </div>
         <div class="col-6">
-            <div class="my-work-circle-big"></div>
+            <div class="my-work-title">
+                <h4>{{ project.name }}</h4>
+            </div>
+            <div class="my-work-language">
+               <h5>{{ project.projectLanguage }}</h5>
+            </div>
+            <div class="my-work-div-content">
+                {{ project.content }}
+            </div>
+            <a class="button" target="_blank" href="https://github.com/VerenaSchranz/{{project.link}}">{{project.name}} Github</a>
         </div>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
