@@ -8,8 +8,7 @@
 .header {
   position: relative;
   height: 100vh;
-  background: linear-gradient(to bottom, $white 0%, $linear-color 100%);
-  width: 100%;
+  @include linear-gradient-background($white, $linear-color);  width: 100%;
   &-btn-box {
     display: flex;
     justify-content: space-between;
