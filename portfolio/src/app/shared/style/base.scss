@@ -107,6 +107,19 @@ button,
     transform: scale(1.1);
   }
 }
+@media (max-width: 720px) {
+  
+  .button:hover::before {
+    width: auto; /* Setzt die Breite des Pseudoelements zurück */
+    left: 0; /* Setzt die Position des Pseudoelements zurück */
+    transform: skewX(0deg); /* Setzt die Transformationswinkel zurück */
+  }
+
+  .button:hover {
+    color: $primary-color; /* Setzt die Textfarbe zurück */
+    transform: scale(1); /* Setzt die Skalierung zurück */
+  }
+}
 
 @media (max-width: 450px) {
   button,

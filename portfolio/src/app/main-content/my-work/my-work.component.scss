@@ -34,6 +34,7 @@
     align-items: end;
     justify-content: space-between;
     img {
+      width: 100%;
       cursor: pointer;
       box-shadow: 5px 5px 15px 0px #00000026;
       transition: filter 0.1s ease, transform 0.1s ease;
@@ -81,6 +82,11 @@
       margin: 0 0 50px 0;
       &-mobile-btn {
         display: none;
+        background-color: $primary-color;
+        color: $white;
+        &:hover {
+          color: $white;
+        }
       }
     }
     &-default {
