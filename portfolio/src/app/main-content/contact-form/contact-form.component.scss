@@ -38,43 +38,182 @@
     position: relative;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    .col-6 {
+        position: relative;
+    }
+  }
+}
+@import "../../../app/shared/style/colors.scss";
+@import "../../../app/shared/style/fonts.scss";
+@import "../../../app/shared/style/mixins.scss";
+@import "../../../app/shared/style/base.scss";
+
+.contact {
+    padding: 0 18px 180px 18px;
+
+  @include linear-gradient-background($white, $linear-color);
+  h2 {
+    margin-bottom: 80px;
+  }
+  h3 {
+    font-size: 32px;
+    color: $primary-color;
+    font-family: $primary-font;
+    font-weight: 700;
+    text-align: left;
+    margin: 0px 0px 40px 0px;
+  }
+  p {
+    font-size: 16px
+  }
+  &-info{
+    color: $primary-color;
+    &-bold {
+        color: $primary-color;
+        font-weight: 700;
+    }
+  }
+  &-circle-1 {
+    @include circle(204px, $primary-color, $secondary-color);
+    position: absolute;
+    right: 50%;
+  }
+
+  .row-contact {
+    position: relative;
+    display: flex;
+    flex-direction: row;
     .col-6 {
         position: relative;
     }
   }
 }
 
-.contact-form {
+/* .contact-form {
     .form-group {
+      position: relative;
       margin-bottom: 20px;
-      label {
-        display: block;
-        margin-bottom: 5px;
-      }
       input[type="text"],
       input[type="email"],
       textarea {
         width: 100%;
         padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        border: 1px solid $primary-color;
+        border-radius: 10px;
+        &:focus + label {
+          transform: translateY(-20px);
+          font-size: 0.8em;
+          color: $primary-color;
+        }
+      }
+      label {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        transition: transform 0.3s, font-size 0.3s, color 0.3s;
+        pointer-events: none;
+        color: #999;
       }
     }
-    .contact-button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      &:hover {
-        background-color: #0056b3;
+  }
+   */
+  
+   .form {
+    &__group:not(:last-child) {
+        margin-bottom: 25px;
+    }
+    #textarea {
+        height: 150px;
+        &::-webkit-resizer {
+            color: red; // Hier die gewünschte Farbe einfügen
+            /* Weitere CSS-Eigenschaften für das Resizer-Icon */
+          }
+    }
+    &__input {
+      font-size: 16px;
+      font-family: $primary-font;
+      color: inherit;
+      padding: 17px 15px;
+      border-radius: 10px;
+      background-color: rgba($white, .5);
+      border: 1px solid $primary-color;
+      width: 90%;
+      display: block;
+      transition: all .8s, border 0.05s; 
+  
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba(#333, .1);
+        border: 2px solid $primary-color;
       }
+  
+      &:focus:invalid {
+        border: 2px solid $error-color;
+      }
+  
+      &::-webkit-input-placeholder {
+        color: grey;
+      }
+    }
+
+    &__label {
+      margin-left: 17px;
+      margin-top: 10px;
+      display: block;
+      transition: all .3s;
+    }
+  
+    &__input:placeholder-shown + &__label {
+       opacity: 0;
+      visibility: hidden; 
+      transform: translateY(-4rem);
+}
+  
+    &__checkbox-label {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 1rem;
+    }
+  
+    &__checkbox {
+      display: none;
+  
+      &:checked + label::before {
+        content: "\2713";
+        display: inline-block;
+        font-size: 1.5rem;
+        line-height: 1;
+        width: 1.5rem;
+        height: 1.5rem;
+        text-align: center;
+        border: 1px solid $primary-color;
+        border-radius: 3px;
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+  
+    button[type="submit"] {
+  
+      &:hover {
+        // background-color: grey;
+      }
+  
       &:disabled {
         opacity: 0.5;
         cursor: not-allowed;
       }
     }
   }
+  
+  
+@media (max-width: 1119px) {}
+  
+  
+
+  
   
 @media (max-width: 1119px) {}
