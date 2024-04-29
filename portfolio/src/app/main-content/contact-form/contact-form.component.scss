@@ -4,7 +4,7 @@
 @import "../../../app/shared/style/base.scss";
 
 .contact {
-    padding: 0 18px 180px 18px;
+  padding: 0 18px 180px 18px;
 
   @include linear-gradient-background($white, $linear-color);
   h2 {
@@ -19,13 +19,13 @@
     margin: 0px 0px 40px 0px;
   }
   p {
-    font-size: 16px
+    font-size: 16px;
   }
-  &-info{
+  &-info {
     color: $primary-color;
     &-bold {
-        color: $primary-color;
-        font-weight: 700;
+      color: $primary-color;
+      font-weight: 700;
     }
   }
   &-circle-1 {
@@ -41,7 +41,7 @@
     justify-content: space-between;
     gap: 20px;
     .col-6 {
-        position: relative;
+      position: relative;
     }
   }
 }
@@ -51,7 +51,7 @@
 @import "../../../app/shared/style/base.scss";
 
 .contact {
-    padding: 0 18px 180px 18px;
+  padding: 0 18px 180px 18px;
 
   @include linear-gradient-background($white, $linear-color);
   h2 {
@@ -66,13 +66,13 @@
     margin: 0px 0px 40px 0px;
   }
   p {
-    font-size: 16px
+    font-size: 16px;
   }
-  &-info{
+  &-info {
     color: $primary-color;
     &-bold {
-        color: $primary-color;
-        font-weight: 700;
+      color: $primary-color;
+      font-weight: 700;
     }
   }
   &-circle-1 {
@@ -86,134 +86,126 @@
     display: flex;
     flex-direction: row;
     .col-6 {
-        position: relative;
-    }
-  }
-}
-
-/* .contact-form {
-    .form-group {
       position: relative;
-      margin-bottom: 20px;
-      input[type="text"],
-      input[type="email"],
-      textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid $primary-color;
-        border-radius: 10px;
-        &:focus + label {
-          transform: translateY(-20px);
-          font-size: 0.8em;
-          color: $primary-color;
-        }
-      }
-      label {
-        position: absolute;
-        top: 50%;
-        left: 10px;
-        transform: translateY(-50%);
-        transition: transform 0.3s, font-size 0.3s, color 0.3s;
-        pointer-events: none;
-        color: #999;
-      }
     }
   }
-   */
-  
-   .form {
-    &__group:not(:last-child) {
-        margin-bottom: 25px;
-    }
-    #textarea {
-        height: 150px;
-        &::-webkit-resizer {
-            color: red; // Hier die gewünschte Farbe einfügen
-            /* Weitere CSS-Eigenschaften für das Resizer-Icon */
-          }
-    }
-    &__input {
-      font-size: 16px;
-      font-family: $primary-font;
-      color: inherit;
-      padding: 17px 15px;
-      border-radius: 10px;
-      background-color: rgba($white, .5);
-      border: 1px solid $primary-color;
-      width: 90%;
-      display: block;
-      transition: all .8s, border 0.05s; 
-  
-      &:focus {
-        outline: none;
-        box-shadow: 0 1rem 2rem rgba(#333, .1);
-        border: 2px solid $primary-color;
-      }
-  
-      &:focus:invalid {
-        border: 2px solid $error-color;
-      }
-  
-      &::-webkit-input-placeholder {
-        color: grey;
-      }
-    }
-
-    &__label {
-      margin-left: 17px;
-      margin-top: 10px;
-      display: block;
-      transition: all .3s;
-    }
-  
-    &__input:placeholder-shown + &__label {
-       opacity: 0;
-      visibility: hidden; 
-      transform: translateY(-4rem);
 }
-  
-    &__checkbox-label {
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 1rem;
-    }
-  
-    &__checkbox {
-      display: none;
-  
-      &:checked + label::before {
-        content: "\2713";
-        display: inline-block;
-        font-size: 1.5rem;
-        line-height: 1;
-        width: 1.5rem;
-        height: 1.5rem;
-        text-align: center;
-        border: 1px solid $primary-color;
-        border-radius: 3px;
-        background-color: $primary-color;
-        color: $white;
-      }
-    }
-  
-    button[type="submit"] {
-  
-      &:hover {
-        // background-color: grey;
-      }
-  
-      &:disabled {
+
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 25px;
+  }
+  #textarea {
+    height: 150px;
+   
+  }
+  &__btn-submit {
+    top: 60px;
+    border-color: $form-grey;
+    &:disabled {
+        cursor: not-allowed; 
         opacity: 0.5;
-        cursor: not-allowed;
+        color: $form-grey;
       }
+      &:hover {
+        transform: none;
+      }
+    }
+  &__input {
+    font-size: 16px;
+    font-family: $primary-font;
+    color: inherit;
+    padding: 17px 15px;
+    border-radius: 10px;
+    background-color: rgba($white, 0.5);
+    border: 1px solid $primary-color;
+    width: 90%;
+    display: block;
+    transition: all 0.8s, border 0.05s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(#333, 0.1);
+      border: 2px solid $primary-color;
+    }
+
+    &:focus:invalid {
+      border: 2px solid $error-color;
+    }
+
+    &::-webkit-input-placeholder {
+      color: grey;
     }
   }
-  
-  
-@media (max-width: 1119px) {}
-  
-  
 
-  
-  
-@media (max-width: 1119px) {}
+  &__label {
+    margin-left: 17px;
+    margin-top: 10px;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__checkbox-group {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+&__checkbox-input {
+    display: none;
+}
+
+&__checkbox-label {
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 45px;
+    position: absolute;
+}
+
+&__checkbox-button {
+    height: 26px;
+    width: 26px;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+
+    &::after {
+        content: "";
+      display: block;
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url('../../../assets/img/Icons/text_box/check.svg'); /* Pfade zum Bild anpassen */
+      background-size: cover; /* Anpassen, wie das Bild skaliert wird */
+      opacity: 0;
+      transition: opacity 0.1s;
+    }
+}
+
+&__checkbox-input:checked ~ &__checkbox-label &__checkbox-button::after {
+    opacity: 1;
+}
+
+}
+
+
+
+@media (max-width: 1119px) {
+}
+
+@media (max-width: 1119px) {
+}

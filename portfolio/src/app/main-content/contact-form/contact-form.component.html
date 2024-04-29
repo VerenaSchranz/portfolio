@@ -16,7 +16,7 @@
                 </div>
             
                 <div class="form__group">
-                    <input [(ngModel)]="contactData.email" [ngModelOptions]="{ standalone: true }" type="email" class="form__input" id="email"  placeholder="Your email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}">
+                    <input [(ngModel)]="contactData.email" [ngModelOptions]="{ standalone: true }" type="email" class="form__input" id="email"  placeholder="Your email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                     <label for="email" class="form__label">Email Address</label>
                 </div>
                 
@@ -25,18 +25,16 @@
                     <label for="message" class="form__label">Message</label>
                 </div>
                 
-                <div class="form__group u-margin-bottom-medium">
-                    <div class="form__checkbox-group">
-                        <input type="checkbox" class="form__checkbox-input" id="small" name="size">
-                        <label for="small" class="form__checkbox-label">
-                            <span class="form__checkbox-button"></span>
-                            Small tour group
-                        </label>
-                    </div>
+                <div class="form__checkbox-group">
+                    <input type="checkbox" class="form__checkbox-input" id="large" name="size" required>
+                    <label for="large" class="form__checkbox-label">
+                        <span class="form__checkbox-button"></span>
+                        I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
+                    </label>
                 </div>
             
                 <div class="form__group">
-                    <input type="submit"  value="Submit" class="button">
+                    <input type="submit" disabled value="Say hello ;) " class="button form__btn-submit">
                 </div>
             </form>
             
