@@ -11,32 +11,35 @@
         <div class="col-6">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="form">
                 <div class="form__group">
-                    <input [(ngModel)]="contactData.name" [ngModelOptions]="{ standalone: true }" type="text" class="form__input" placeholder="Your name" id="name" required>
+                    <input [(ngModel)]="contactData.name" type="text" name="name" class="form__input" placeholder="Your name" id="name" required>
                     <label for="name" class="form__label">Name</label>
                 </div>
             
                 <div class="form__group">
-                    <input [(ngModel)]="contactData.email" [ngModelOptions]="{ standalone: true }" type="email" class="form__input" id="email"  placeholder="Your email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                    <input [(ngModel)]="contactData.email" type="email" name="email" class="form__input" id="email" placeholder="Your email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
                     <label for="email" class="form__label">Email Address</label>
                 </div>
-                
+            
                 <div class="form__group">
-                    <textarea [(ngModel)]="contactData.message" [ngModelOptions]="{ standalone: true }" class="form__input" placeholder="Your message" id="message" required></textarea>
+                    <textarea [(ngModel)]="contactData.message" name="message" class="form__input" placeholder="Your message" id="message" required></textarea>
                     <label for="message" class="form__label">Message</label>
                 </div>
-                
+            
                 <div class="form__checkbox-group">
-                    <input type="checkbox" class="form__checkbox-input" id="large" name="size" required>
+                    <input type="checkbox" [(ngModel)]="">
                     <label for="large" class="form__checkbox-label">
-                        <span class="form__checkbox-button"></span>
-                        I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
+              
+                       <div> <span class="form__checkbox-button"></span></div>
+                        <div>I've read the <a class="privacy-link" href="#">privacy policy</a> and agree to the processing of my data as outlined.</div>
+           
                     </label>
                 </div>
             
                 <div class="form__group">
-                    <input type="submit" disabled value="Say hello ;) " class="button form__btn-submit">
+                    <input type="submit"  value="Say hello ;)" class="button form__btn-submit">
                 </div>
             </form>
+            
             
         </div>
       </div>
