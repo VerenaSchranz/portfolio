@@ -61,7 +61,15 @@ p {
     width: 100%;
   }
 }
+a {
+  font-family: $primary-font;
+  color: $form-green;
+  text-decoration: none;
+  &:hover {
+    font-weight: 700;
 
+  }
+}
 button,
 .button {
   padding: 15px 30px 15px 30px;
