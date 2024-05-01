@@ -13,10 +13,14 @@ export class ContactFormComponent {
     name: "",
     email: "",
     message: "",
+    readOrNot: false,
   }
   onSubmit(ngForm: NgForm) {
-    if(ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData)
+    if (ngForm.valid && ngForm.submitted) {
+      console.log(this.contactData);
+    }
+    if (this.contactData.readOrNot) {
+      this.contactData.readOrNot = true;
     }
   }
 }
