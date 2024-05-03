@@ -1,48 +1,112 @@
 <section class="contact">
-    <div class="main">
-      <div class="row-contact">
-        <div class="col-6">
-          <h2>Contact</h2>
-          <h3>Got a problem to solve?</h3>
-          <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
-          <span class="contact-info">Need a Frontend developer?</span><span class="contact-info-bold"> Contact me!</span>
-          <div class="contact-circle-1"></div>
-        </div>
-        <div class="col-6">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="form">
-                <div class="form__group">
-                    <input [(ngModel)]="contactData.name" type="text" name="name" class="form__input" placeholder="Your name" id="name" required>
-                    <label for="name" class="form__label">Name</label>
-                </div>
+  <div class="main">
+    <div class="row-contact">
+      <div class="col-6">
+        <h2>Contact</h2>
+        <h3>Got a problem to solve?</h3>
+        <p>
+          Contact me through this form, I am interested in hearing from you,
+          knowing your ideas and contributing to your projects with my work.
+        </p>
+        <span class="contact-info">Need a Frontend developer?</span
+        ><span class="contact-info-bold"> Contact me!</span>
+        <div class="contact-circle-1"></div>
+      </div>
+      <div class="col-6">
+        <form
+          (ngSubmit)="onSubmit(contactForm)"
+          #contactForm="ngForm"
+          class="form"
+        >
+          <div class="form__group">
+            <input
+              #name="ngModel"
+              [(ngModel)]="contactData.name"
+              type="text"
+              name="name"
+              class="form__input"
+              placeholder="Your name"
+              id="name"
+              required
+            />
+            <label for="name" class="form__label">Your name</label>
+            @if (!name.valid && name.touched && !name.disabled) {
+            <div class="form__error-message">Your name is required</div>
+            }
+          </div>
+
+          <div class="form__group">
+            <input
+              #email="ngModel"
+              [(ngModel)]="contactData.email"
+              type="email"
+              name="email"
+              class="form__input"
+              id="email"
+              placeholder="Your email"
+              required
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            />
+            <label for="email" class="form__label">Your email</label>
+            @if (!email.valid && email.touched && !email.disabled) {
+            <div class="form__error-message">Your email is required</div>
+            }
+          </div>
+
+          <div class="form__group">
+            <textarea
+              #message="ngModel"
+              [(ngModel)]="contactData.message"
+              minlength="4"
+              name="message"
+              class="form__input form__textarea"
+              placeholder="Your message"
+              id="message"
+              required
+            ></textarea>
+
+            <label for="message" class="form__label-message"
+              >Your message</label
+            >
+            @if (!message.valid && message.touched && !message.disabled) {
+            <div class="form__error-message">Your message is empty</div>
+            }
+          </div>
+
+          <div class="form__checkbox-group">
+            <input
+            id="read"
+            name="readOrNot"
+            #read="ngModel"
+            [(ngModel)]="contactData.readOrNot"
+            readOrNot="read"
+            type="checkbox"
+            class="form__checkbox-input"
+          />
+          <label for="read" class="form__checkbox-label">
+            <span class="form__checkbox-button"></span>
             
-                <div class="form__group">
-                    <input [(ngModel)]="contactData.email" type="email" name="email" class="form__input" id="email" placeholder="Your email address" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-                    <label for="email" class="form__label">Email Address</label>
-                </div>
-            
-                <div class="form__group">
-                    <textarea [(ngModel)]="contactData.message" name="message" class="form__input" placeholder="Your message" id="message" required></textarea>
-                    <label for="message" class="form__label">Message</label>
-                </div>
-            
-                <div class="form__checkbox-group">
-                    <input type="checkbox" [(ngModel)]="">
-                    <label for="large" class="form__checkbox-label">
-              
-                       <div> <span class="form__checkbox-button"></span></div>
-                        <div>I've read the <a class="privacy-link" href="#">privacy policy</a> and agree to the processing of my data as outlined.</div>
-           
-                    </label>
-                </div>
-            
-                <div class="form__group">
-                    <input type="submit"  value="Say hello ;)" class="button form__btn-submit">
-                </div>
-            </form>
-            
-            
-        </div>
+          </label>
+          <div class="privacy-div">
+            I've read the
+            <a class="privacy-div-link" href="#">privacy policy</a> and agree to
+            the processing of my data as outlined.
+          </div>
+ 
+            <!--          @if (!read.valid && read.touched && !read.disabled) {
+            <div class="form__error-message">Please accept the privacy policy.</div>
+            } -->
+          </div>
+
+          <div class="form__group">
+            <input
+              type="submit"
+              value="Say hello ;)"
+              class="button form__btn-submit"
+            />
+          </div>
+        </form>
       </div>
     </div>
-  </section>
-  
+  </div>
+</section>
