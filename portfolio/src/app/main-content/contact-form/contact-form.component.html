@@ -75,27 +75,28 @@
 
           <div class="form__checkbox-group">
             <input
-            id="read"
-            name="readOrNot"
-            #read="ngModel"
-            [(ngModel)]="contactData.readOrNot"
-            readOrNot="read"
-            type="checkbox"
-            class="form__checkbox-input"
-          />
-          <label for="read" class="form__checkbox-label">
-            <span class="form__checkbox-button"></span>
-            
-          </label>
-          <div class="privacy-div">
-            I've read the
-            <a class="privacy-div-link" href="#">privacy policy</a> and agree to
-            the processing of my data as outlined.
-          </div>
- 
-            <!--          @if (!read.valid && read.touched && !read.disabled) {
-            <div class="form__error-message">Please accept the privacy policy.</div>
-            } -->
+              id="read"
+              name="readOrNot"
+              #read="ngModel"
+              [(ngModel)]="contactData.readOrNot"
+              type="checkbox"
+              class="form__checkbox-input"
+              required
+            />
+            <label for="read" class="form__checkbox-label">
+              <span class="form__checkbox-button"></span>
+            </label>
+            <div class="privacy-div">
+              I've read the
+              <a class="privacy-div-link" href="#">privacy policy</a> and agree
+              to the processing of my data as outlined.
+            </div>
+
+            @if (!read.valid && read.touched && !read.disabled) {
+            <div class="form__error-message">
+              Please accept the privacy policy.
+            </div>
+            }
           </div>
 
           <div class="form__group">

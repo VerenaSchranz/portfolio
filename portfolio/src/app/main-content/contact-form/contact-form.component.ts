@@ -19,7 +19,7 @@ export class ContactFormComponent {
     readOrNot: false,
   } 
 
-  mailTest = true;
+  mailTest = false;
 
   post = {
     endPoint: 'https://verenaschranz.de/sendMail.php',
