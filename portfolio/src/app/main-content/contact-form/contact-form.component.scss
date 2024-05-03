@@ -3,6 +3,17 @@
 @import "../../../app/shared/style/mixins.scss";
 @import "../../../app/shared/style/base.scss";
 
+input[type="checkbox"] {
+  display: none;
+}
+span.form__checkbox-button{
+  cursor: pointer;
+}
+
+.privacy-div {
+  width: 92%;
+  margin-left: 8%;
+}
 .contact {
   padding: 0 18px 180px 18px;
 
@@ -48,7 +59,7 @@
     position: relative;
   }
   &__group:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
   &__textarea {
     height: 150px;
@@ -139,7 +150,7 @@
     background-color: rgba($white, 0.5);
     border: 1px solid $primary-color;
     width: 90%;
-    height: 150px; // Hier die Höhe der Textarea
+    height: 150px;
     display: block;
     transition: all 0.8s, border 0.05s;
   
@@ -199,7 +210,7 @@
   }
 
   &__checkbox-input {
-    display: none;
+    display: none!important;
   }
 
   &__checkbox-label {
@@ -210,7 +221,7 @@
     justify-content: space-between;
     gap: 20px;
     &:hover {
-      .privacy-link {
+      .privacy-div-link {
         font-weight: 700;
       }
     }
@@ -223,6 +234,12 @@
     border-radius: 5px;
     display: inline-block;
     position: relative;
+    cursor: pointer;
+    &:hover {
+      + .form__checkbox-label .privacy-link {
+        font-weight: 700;
+      }
+    }
     &::before {
       content: "";
       display: block;
@@ -236,8 +253,10 @@
       background-color: $hover-color-light;
       opacity: 0;
       transition: opacity 0.1s;
+  
     }
     &::after {
+      cursor: pointer;
       content: "";
       display: block;
       height: 1.3rem;

@@ -29,11 +29,10 @@
               id="name"
               required
             />
-                <label for="name" class="form__label">Your name</label>
+            <label for="name" class="form__label">Your name</label>
             @if (!name.valid && name.touched && !name.disabled) {
             <div class="form__error-message">Your name is required</div>
             }
-
           </div>
 
           <div class="form__group">
@@ -50,42 +49,53 @@
             />
             <label for="email" class="form__label">Your email</label>
             @if (!email.valid && email.touched && !email.disabled) {
-              <div class="form__error-message">Your email is required</div>
-              }
+            <div class="form__error-message">Your email is required</div>
+            }
           </div>
 
           <div class="form__group">
             <textarea
               #message="ngModel"
               [(ngModel)]="contactData.message"
+              minlength="4"
               name="message"
               class="form__input form__textarea"
               placeholder="Your message"
               id="message"
               required
             ></textarea>
-          
-            <label for="message" class="form__label-message">Your message</label>
+
+            <label for="message" class="form__label-message"
+              >Your message</label
+            >
             @if (!message.valid && message.touched && !message.disabled) {
-              <div class="form__error-message">Your message is empty</div>
-              }
+            <div class="form__error-message">Your message is empty</div>
+            }
           </div>
 
           <div class="form__checkbox-group">
-            <input id="read" name="readOrNot"    #read="ngModel" [(ngModel)]="contactData.readOrNot"
-            readOrNot="read" type="checkbox" />
-            <label for="large" class="form__checkbox-label">
-              <div><span class="form__checkbox-button"></span></div>
-              <div>
-                I've read the
-                <a class="privacy-link" href="#">privacy policy</a> and agree to
-                the processing of my data as outlined.
-              </div>
-             
-            </label>
-             @if (!read.valid && read.touched && !read.disabled) {
-              <div class="form__error-message">Please enter a name</div>
-              }
+            <input
+            id="read"
+            name="readOrNot"
+            #read="ngModel"
+            [(ngModel)]="contactData.readOrNot"
+            readOrNot="read"
+            type="checkbox"
+            class="form__checkbox-input"
+          />
+          <label for="read" class="form__checkbox-label">
+            <span class="form__checkbox-button"></span>
+            
+          </label>
+          <div class="privacy-div">
+            I've read the
+            <a class="privacy-div-link" href="#">privacy policy</a> and agree to
+            the processing of my data as outlined.
+          </div>
+ 
+            <!--          @if (!read.valid && read.touched && !read.disabled) {
+            <div class="form__error-message">Please accept the privacy policy.</div>
+            } -->
           </div>
 
           <div class="form__group">
