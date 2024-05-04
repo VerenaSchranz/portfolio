@@ -43,6 +43,7 @@ span.form__checkbox-button {
     font-weight: 700;
     text-align: left;
     margin: 0px 0px 40px 0px;
+    text-transform: none;
   }
   p {
     font-size: 16px;
@@ -58,11 +59,18 @@ span.form__checkbox-button {
     @include circle(204px, $primary-color, $secondary-color);
     position: absolute;
     right: 50%;
+    bottom: 30px;
   }
-
+  &-circle-2 {
+    @include circle(73px, $primary-color, $secondary-color);
+    position: absolute;
+    right: 0;
+    bottom: -120px;
+  }
   .row-contact {
     position: relative;
     display: flex;
+    gap: 20px;
     .col-6 {
       position: relative;
     }
@@ -104,7 +112,7 @@ span.form__checkbox-button {
     color: inherit;
     padding: 17px 15px;
     border-radius: 10px;
-    background-color: rgba($white, 0.5);
+    background-color: $white;
     border: 1px solid $primary-color;
     width: 90%;
     display: block;
@@ -162,7 +170,7 @@ span.form__checkbox-button {
     color: inherit;
     padding: 17px 15px;
     border-radius: 10px;
-    background-color: rgba($white, 0.5);
+    background-color: $white;
     border: 1px solid $primary-color;
     width: 90%;
     height: 150px;
@@ -295,9 +303,44 @@ span.form__checkbox-button {
   }
 }
 
-@media (max-width: 1119px) {
+@media (max-width: 1025px) {
   .row-contact {
     display: flex;
     flex-direction: column;
+  }
+
+  .privacy-div {
+    margin-left: 35px;
+    margin-top: 3px;
+
+  }
+
+  .contact {
+    padding: 150px 30px;
+      &-circle-1 {
+        bottom: -140%;
+      }
+  }
+  .form {
+    &__input {
+      width: 100%;
+  }
+  &__group {
+    text-align: center;
+
+  }
+  &__btn-submit {
+    left:0;
+  }
+}
+
+}
+
+@media (max-width: 400px) {
+  .contact {
+    padding: 150px 30px;
+      &-circle-1 {
+        bottom: -80%;
+      }
   }
 }
