@@ -30,9 +30,11 @@
               required
             />
             <label for="name" class="form__label">Your name</label>
-            @if (!name.valid && name.touched && !name.disabled) {
+           <!--  @if (!name.valid && name.touched && !name.disabled) {
             <div class="form__error-message">Your name is required</div>
-            }
+            } -->
+            <span *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" class="error-icon"><img src="assets/img/Icons/form/error.svg" alt=""></span>
+            <span *ngIf="contactForm.get('name')?.valid" class="valid-icon"><img src="assets/img/Icons/form/valid.svg" alt=""></span>
           </div>
 
           <div class="form__group">
