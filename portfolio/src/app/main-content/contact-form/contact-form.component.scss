@@ -20,7 +20,6 @@ span.form__checkbox-button {
 
 .privacy-div {
   width: 92%;
-  margin-left: 8%;
 }
 .privacyPolicyErrorVisible {
   top: 49px;
@@ -239,10 +238,11 @@ span.form__checkbox-button {
   &__checkbox-label {
     font-size: 16px;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+  
     &:hover {
       .privacy-div-link {
         font-weight: 700;
@@ -259,7 +259,7 @@ span.form__checkbox-button {
     position: relative;
     cursor: pointer;
     &:hover {
-      + .form__checkbox-label .privacy-link {
+      + .form__checkbox-label .privacy-div-link {
         font-weight: 700;
       }
     }
@@ -302,6 +302,10 @@ span.form__checkbox-button {
     opacity: 1;
   }
 }
+.form__checkbox-input:checked ~ .form__checkbox-label .form__checkbox-button::after {
+  opacity: 1;
+}
+
 
 @media (max-width: 1025px) {
   .row-contact {

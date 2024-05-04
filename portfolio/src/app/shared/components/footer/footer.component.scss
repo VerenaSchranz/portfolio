@@ -1,0 +1,36 @@
+@import "../../../shared/style/colors.scss";
+@import "../../../shared/style/fonts.scss";
+
+
+.row-footer {
+    padding: 180px 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer {
+    background-image: linear-gradient(to right, #57e8a2, #33b476);
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $white;
+        gap: 30px;
+        &-name {
+            font-size: 23px;
+            font-family: $primary-font;
+            font-weight: 400;
+        }
+        &-imprint a {
+            color: $white;
+            &:hover {
+                font-weight: 700;
+            }
+        }
+        &-social {
+            display: flex;
+            gap: 30px;
+        }
+    }
+}
