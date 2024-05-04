@@ -6,31 +6,59 @@
     padding: 180px 18px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
 }
 .footer {
     background-image: linear-gradient(to right, #57e8a2, #33b476);
+  
     &-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $white;
+      gap: 30px;
+  
+      &-name {
+        font-size: 23px;
+        font-family: $primary-font;
+        font-weight: 400;
+      }
+  
+      &-imprint a {
+        color: $white;
+        text-decoration: none; /* Entfernt die Unterstreichung */
+        transition: font-weight 0.3s ease; /* Übergang für Schriftgewicht */
+  
+        &:hover {
+          font-weight: 700; /* Ändert das Schriftgewicht beim Hover */
+        }
+      }
+  
+      &-social {
+        display: flex;
+        gap: 30px;
+  
+        /* Anpassung für Social-Media-Icons */
+        img {
+          transition: transform 0.3s ease; /* Übergang für Transformation (Skalierung) */
+  
+          /* CSS-Regeln für Hover-Effekt */
+          &:hover {
+            transform: scale(1.2); /* Vergrößert das Icon um 20% beim Hover */
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1025px) {
+    .row-footer {
+        padding: 70px 18px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        color: $white;
-        gap: 30px;
-        &-name {
-            font-size: 23px;
-            font-family: $primary-font;
-            font-weight: 400;
-        }
-        &-imprint a {
-            color: $white;
-            &:hover {
-                font-weight: 700;
-            }
-        }
-        &-social {
-            display: flex;
-            gap: 30px;
-        }
+        justify-content: center;
+        gap: 90px;
     }
-}
+  }
