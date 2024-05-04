@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -5,18 +6,19 @@ import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
   http = inject(HttpClient);
+  privacyPolicyErrorVisible: boolean = false;
+  readOrNot: boolean = false;
 
    contactData = {
     name: "",
     email: "",
     message: "",
-    readOrNot: false,
   } 
 
   mailTest = false;
@@ -33,36 +35,61 @@ export class ContactFormComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (ngForm.valid && ngForm.submitted) {
+      if (!this.readOrNot) {
+        // Fehlerbehandlung, da die Datenschutzrichtlinie nicht akzeptiert wurde
+        console.error('Please accept the privacy policy');
+
+        return;
+      }
+  
+      // Formular ist gültig und bereit zum Absenden
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
+            console.log('Form submitted successfully');
             ngForm.resetForm();
           },
           error: (error) => {
-            console.error(error);
+            console.error('Error submitting form:', error);
           },
-          complete: () => console.info('send post complete'),
+          complete: () => {
+            console.info('Post request complete');
+          }
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
     }
   }
+  
+   toggleCheckbox() {
+    this.readOrNot = !this.readOrNot;
+    this.submitFormCheck();
+  } 
 
-/*   contactData = {
-    name: "",
-    email: "",
-    message: "",
-    readOrNot: false,
-  } */
-  /* onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
+   submitFormCheck() {
+    if (!this.readOrNot) {
+      this.privacyPolicyErrorVisible = true;
+    } else {
+      this.privacyPolicyErrorVisible = false;
     }
-    if (this.contactData.readOrNot) {
-      this.contactData.readOrNot = true;
-    }
-  } */
+  } 
+
+  isFormValid(ngForm: NgForm): boolean {
+    return ngForm.form.valid && this.readOrNot;
+  }
+
+  markFieldsIfInvalid(ngForm: NgForm) {
+    if (!this.isFormValid(ngForm)) {
+      Object.values(ngForm.controls).forEach(control => {
+        control.markAsDirty();
+      });
+    };
+  }
+
+  goToPrivacyPolicy() {
+  /*   this.formDataService.saveFormData(this.contactData);
+    this.router.navigateByUrl('/privacyPolicy').then(() => {
+      window.scrollTo(0, 0);
+    }); */
+  }
 }
+
