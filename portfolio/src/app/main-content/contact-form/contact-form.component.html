@@ -1,6 +1,6 @@
 <section class="contact">
-  <h2>Contact</h2>
   <div class="main">
+    <h2>Contact</h2>
     <div class="row-contact">
       <div class="col-6">
         <h3>Got a problem to solve?</h3>
@@ -55,14 +55,17 @@
             <input id="read" name="readOrNot" #read="ngModel" [(ngModel)]="readOrNot" type="checkbox" class="form__checkbox-input" required />
             <label for="read" class="form__checkbox-label">
               <span class="form__checkbox-button"></span>
+              <div class="privacy-div">
+                I've read the <a class="privacy-div-link" href="#">privacy policy</a> and agree to the processing of my data as outlined.
+              </div>
             </label>
-            <div class="privacy-div">
-              I've read the <a class="privacy-div-link" href="#">privacy policy</a> and agree to the processing of my data as outlined.
-            </div>
+           
   
           </div>
          
-   
+          <div class="form__successmail">
+            <h4>Thank you!</h4>
+          </div>
           <!-- Submit Button -->
           <div class="form__group">
             <button type="submit"  class="button form__btn-submit validbtn" [disabled]="!isFormValid(contactForm)">Send message :)</button>
