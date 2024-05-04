@@ -1,111 +1,75 @@
 <section class="contact">
+  <h2>Contact</h2>
   <div class="main">
     <div class="row-contact">
       <div class="col-6">
-        <h2>Contact</h2>
         <h3>Got a problem to solve?</h3>
-        <p>
-          Contact me through this form, I am interested in hearing from you,
-          knowing your ideas and contributing to your projects with my work.
-        </p>
-        <span class="contact-info">Need a Frontend developer?</span
-        ><span class="contact-info-bold"> Contact me!</span>
+        <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
+        <span class="contact-info">Need a Frontend developer?</span>
+        <span class="contact-info-bold"> Contact me!</span>
         <div class="contact-circle-1"></div>
       </div>
       <div class="col-6">
-        <form
-          (ngSubmit)="onSubmit(contactForm)"
-          #contactForm="ngForm"
-          class="form"
-        >
-          <div class="form__group">
-            <input
-              #name="ngModel"
-              [(ngModel)]="contactData.name"
-              type="text"
-              name="name"
-              class="form__input"
-              placeholder="Your name"
-              id="name"
-              required
-            />
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="form">
+          <!-- Name -->
+          <div class="form__group" [ngClass]="{ 'error': nameInput.invalid && (nameInput.dirty || nameInput.touched), 'valid': nameInput.valid && (nameInput.dirty || nameInput.touched) }">
+            <input #nameInput="ngModel" [(ngModel)]="contactData.name" type="text" name="name" class="form__input" placeholder="Your name" id="name" required />
             <label for="name" class="form__label">Your name</label>
-            @if (!name.valid && name.touched && !name.disabled) {
-            <div class="form__error-message">Your name is required</div>
-            }
+            <span *ngIf="nameInput.valid && (nameInput.dirty || nameInput.touched)" class="validOrNot">
+              <img src="../../../assets/img/Icons/text_box/done.svg" alt="Valid icon">
+            </span>
+            <span *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)" class="validOrNot">
+              <img src="../../../assets/img/Icons/text_box/error.svg" alt="Valid icon">
+            </span>
+            <div class="form__error-message" *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">Your name is required</div>
           </div>
 
-          <div class="form__group">
-            <input
-              #email="ngModel"
-              [(ngModel)]="contactData.email"
-              type="email"
-              name="email"
-              class="form__input"
-              id="email"
-              placeholder="Your email"
-              required
-              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-            />
+          <!-- Email -->
+          <div class="form__group" [ngClass]="{ 'error': email.invalid && email.touched, 'valid': email.valid && email.touched }">
+            <input #email="ngModel" [(ngModel)]="contactData.email" type="email" name="email" class="form__input" id="email" placeholder="Your email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
             <label for="email" class="form__label">Your email</label>
-            @if (!email.valid && email.touched && !email.disabled) {
-            <div class="form__error-message">Your email is required</div>
-            }
+            <span *ngIf="email.valid && email.touched" class="validOrNot">
+              <img src="../../../assets/img/Icons/text_box/done.svg" alt="Valid icon">
+            </span>
+            <span *ngIf="email.invalid && email.touched" class="validOrNot">
+              <img src="../../../assets/img/Icons/text_box/error.svg" alt="Valid icon">
+            </span>
+            <div class="form__error-message" *ngIf="email.invalid && email.touched">Please enter a valid email address</div>
           </div>
 
-          <div class="form__group">
-            <textarea
-              #message="ngModel"
-              [(ngModel)]="contactData.message"
-              minlength="4"
-              name="message"
-              class="form__input form__textarea"
-              placeholder="Your message"
-              id="message"
-              required
-            ></textarea>
-
-            <label for="message" class="form__label-message"
-              >Your message</label
-            >
-            @if (!message.valid && message.touched && !message.disabled) {
-            <div class="form__error-message">Your message is empty</div>
-            }
+          <!-- Message -->
+          <div class="form__group" [ngClass]="{ 'error': message.invalid && message.touched, 'valid': message.valid && message.touched }">
+            <textarea #message="ngModel" [(ngModel)]="contactData.message" minlength="4" name="message" class="form__input form__textarea" placeholder="Your message" id="message" required></textarea>
+            <label for="message" class="form__label-message">Your message</label>
+            <span *ngIf="message.valid && message.touched" class="validOrNot">
+              <img src="../../../assets/img/Icons/text_box/done.svg" alt="Valid icon">
+            </span>
+            <span *ngIf="message.invalid && message.touched" class="validOrNot">
+              <img src="../../../assets/img/Icons/text_box/error.svg" alt="Valid icon">
+            </span>
+            <div class="form__error-message" *ngIf="message.invalid && message.touched">Your message is too short</div>
           </div>
 
+          <!-- Privacy Policy Checkbox -->
           <div class="form__checkbox-group">
-            <input
-              id="read"
-              name="readOrNot"
-              #read="ngModel"
-              [(ngModel)]="contactData.readOrNot"
-              type="checkbox"
-              class="form__checkbox-input"
-              required
-            />
+            <input id="read" name="readOrNot" #read="ngModel" [(ngModel)]="readOrNot" type="checkbox" class="form__checkbox-input" required />
             <label for="read" class="form__checkbox-label">
               <span class="form__checkbox-button"></span>
             </label>
             <div class="privacy-div">
-              I've read the
-              <a class="privacy-div-link" href="#">privacy policy</a> and agree
-              to the processing of my data as outlined.
+              I've read the <a class="privacy-div-link" href="#">privacy policy</a> and agree to the processing of my data as outlined.
             </div>
-
-            @if (!read.valid && read.touched && !read.disabled) {
-            <div class="form__error-message">
-              Please accept the privacy policy.
-            </div>
-            }
+  
           </div>
-
+         
+   
+          <!-- Submit Button -->
           <div class="form__group">
-            <input
-              type="submit"
-              value="Say hello ;)"
-              class="button form__btn-submit"
-            />
+            <button type="submit"  class="button form__btn-submit validbtn" [disabled]="!isFormValid(contactForm)">Send message :)</button>
+
+        
           </div>
+          <div class="contact-circle-2"></div>
         </form>
       </div>
     </div>

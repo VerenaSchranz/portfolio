@@ -47,7 +47,6 @@ p {
   scrollbar-width: auto;
 }
 
-/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 4px;
 }
@@ -70,9 +69,8 @@ a {
 
   }
 }
-button,
-.button {
-  padding: 15px 30px 15px 30px;
+.button, .validbtn {
+  padding: 15px 30px;
   color: $primary-color;
   font-family: $primary-font;
   display: inline-block;
@@ -94,12 +92,8 @@ button,
     left: -20%;
     width: 0;
     height: 100%;
-    background-image: linear-gradient(
-      to right,
-      $primary-color,
-      $secondary-color
-    );
-    transition: width 0.3s, transform 0.3s;
+    background-image: linear-gradient(to right, $primary-color, $secondary-color);
+    transition: width 0.3s, transform 0.3s; // Separate transition for ::before
     z-index: -1;
   }
 
@@ -114,18 +108,53 @@ button,
     color: $white;
     transform: scale(1.1);
   }
+
+  &:disabled {
+    color: $primary-color; // Use primary color for text when disabled
+    cursor: not-allowed; // Show not-allowed cursor for disabled state
+    pointer-events: none; // Disable pointer events on disabled button
+
+    // Disable transitions for disabled state
+    transition: none;
+
+    // Disable hover effect for disabled state
+    &:hover {
+      transform: none; // Reset transform on hover
+      color: $primary-color; // Maintain primary color for text
+    }
+
+    // Disable gradient effect for disabled state
+    &:before {
+      width: 0; // Reset width to 0 for gradient effect
+      transition: width 0.3s, transform 0.3s; // Re-enable transition for ::before
+    }
+  }
+
+  // Re-enable transitions when not disabled
+  &:not(:disabled) {
+    transition: transform 0.2s, color 0.2s;
+  }
+
+ 
+  &:not(:disabled):hover {
+    color: $white; 
+    transform: scale(1.1); 
+  }
 }
+
+
+
 @media (max-width: 720px) {
   
   .button:hover::before {
-    width: auto; /* Setzt die Breite des Pseudoelements zurück */
-    left: 0; /* Setzt die Position des Pseudoelements zurück */
-    transform: skewX(0deg); /* Setzt die Transformationswinkel zurück */
+    width: auto; 
+    left: 0; 
+    transform: skewX(0deg); 
   }
 
   .button:hover {
-    color: $primary-color; /* Setzt die Textfarbe zurück */
-    transform: scale(1); /* Setzt die Skalierung zurück */
+    color: $primary-color; 
+    transform: scale(1); 
   }
 }
 
