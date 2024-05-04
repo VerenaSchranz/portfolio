@@ -49,6 +49,7 @@ export class ContactFormComponent {
           next: (response) => {
             console.log('Form submitted successfully');
             ngForm.resetForm();
+            this.showSuccessMessage();
           },
           error: (error) => {
             console.error('Error submitting form:', error);
@@ -72,6 +73,18 @@ export class ContactFormComponent {
       this.privacyPolicyErrorVisible = false;
     }
   } 
+
+  private showSuccessMessage() {
+    const successElement = document.querySelector('.form__successmail') as HTMLElement;
+  
+    successElement.classList.add('success-visible');
+  
+    setTimeout(() => {
+      successElement.classList.remove('success-visible');
+    }, 1000); 
+  }
+  
+  
 
   isFormValid(ngForm: NgForm): boolean {
     return ngForm.form.valid && this.readOrNot;
