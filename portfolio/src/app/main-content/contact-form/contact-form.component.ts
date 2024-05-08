@@ -13,6 +13,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ContactFormComponent {
   http = inject(HttpClient);
   privacyPolicyErrorVisible: boolean = false;
+  isChecked: boolean = false; 
+
   readOrNot: boolean = false;
 
    contactData = {
@@ -62,7 +64,8 @@ export class ContactFormComponent {
   }
   
    toggleCheckbox() {
-    this.readOrNot = !this.readOrNot;
+    this.isChecked = true;
+  this.readOrNot = true;
     this.submitFormCheck();
   } 
 
@@ -85,9 +88,8 @@ export class ContactFormComponent {
   }
   
   
-
-  isFormValid(ngForm: NgForm): boolean {
-    return ngForm.form.valid && this.readOrNot;
+  isFormValid(contactForm: NgForm): boolean {
+    return contactForm.form.valid && this.readOrNot;
   }
 
   markFieldsIfInvalid(ngForm: NgForm) {

@@ -86,7 +86,7 @@
     img {
       height: 100vh;
       object-fit: cover;
-      left: -130%;
+      left: -40%;
       position: absolute;
     }
 
@@ -122,7 +122,7 @@
 @media (min-width: 1399px) and (max-height: 800px) {
   .header {
     &-content {
-      padding-top: 5%;
+      padding-top: 11%;
       margin: 0 0px 0px 0px;
     }
     &-left {
@@ -383,7 +383,7 @@
     }
     &-content {
       position: absolute;
-      padding-top: 130px;
+      padding-top: 190px;
       height: auto;
       left: 0%;
       z-index: 1;

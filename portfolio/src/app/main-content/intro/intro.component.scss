@@ -58,7 +58,7 @@
 }
 @media (max-width: 720px) {
     .intro {
-
+        padding: 100px 18px;
         &-circle-little {
             @include circle(50px, $primary-color, $secondary-color);
             right: 10%;

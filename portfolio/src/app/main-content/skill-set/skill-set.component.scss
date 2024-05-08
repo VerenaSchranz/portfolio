@@ -48,6 +48,9 @@
             width: 50%;
         }
     }
+    @media (max-width: 720px) {
+        padding: 100px 18px;
+    }
 
     @keyframes bounce {
         to {

@@ -172,6 +172,7 @@
       left: 80%;
     }
     &-div {
+      padding: 50px 0;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -259,6 +260,7 @@
 
 @media (max-width: 720px) {
   .my-work {
+    padding: 100px 18px;
     overflow: hidden;
     &-circle-little {
       top: -120px;
