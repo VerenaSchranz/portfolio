@@ -15,7 +15,8 @@ span.form__checkbox-button {
   height: auto;
   position: absolute;
   right: 20px;
-  top: 10px;
+  top: 15px;
+  border-color: $form-grey;
 }
 
 .privacy-div {
@@ -29,8 +30,7 @@ span.form__checkbox-button {
   display: block;
 }
 .contact {
-  padding: 0 18px 180px 18px;
-
+  padding: 100px 30px;
   @include linear-gradient-background($white, $linear-color);
   h2 {
     margin-bottom: 80px;
@@ -116,12 +116,12 @@ span.form__checkbox-button {
   }
   &__btn-submit {
     top: 60px;
-    border-color: $form-grey;
     left: 30%;
     &:disabled {
       cursor: not-allowed;
       opacity: 0.5;
       color: $form-grey;
+      border-color: $form-grey;
     }
     &:hover {
       transform: none;
@@ -369,9 +369,17 @@ span.form__checkbox-button {
   }
 }
 
+@media (max-width: 720px) {
+  .contact {
+    padding: 0 18px 100px 18px;
+   h2 {
+    margin-bottom: 30px;
+   }
+  }
+}
+
 @media (max-width: 400px) {
   .contact {
-    padding: 150px 30px;
     &-circle-1 {
       bottom: -80%;
     }

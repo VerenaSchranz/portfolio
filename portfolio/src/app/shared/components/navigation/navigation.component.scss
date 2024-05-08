@@ -1,0 +1,143 @@
+// Importieren der Farbvariablen aus colors.scss
+@import "../../style/colors.scss";
+@import "../../style/mixins.scss";
+
+
+// Stil für die gesamte Navigation
+.nav {
+  height: 80px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 6;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+    &-mobile {
+        display: none;
+    }
+  // Stil für das Logo
+  &-logo {
+    width: 70%; // Breite des Logos
+    img {
+      width: 50px; // Breite des Logosbilds
+      height: auto;
+    }
+  }
+
+  // Stil für das Menü
+  &-menu {
+    width: 30%; // Breite des Menüs
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $primary-color; // Standardfarbe der Links aus colors.scss
+      font-size: 23px;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-color;
+        transition: transform 0.3s ease;
+        transform-origin: center left;
+        transform: scaleX(0);
+      }
+
+      &:hover {
+        color: $secondary-color;
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+    .nav {
+      &-menu {
+        justify-content: flex-end;
+        a {
+          display: none;
+        }
+      }
+      &-menu-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        gap: 33px;
+        a {
+            font-size: 23px;
+        }
+      }
+      &-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 70px;
+        cursor: pointer;
+  
+        span {
+          background: $primary-color;
+          border-radius: 10px;
+          height: 7px;
+          margin: 7px 0;
+          transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  
+          &:nth-of-type(1) {
+            width: 50%;
+          }
+  
+          &:nth-of-type(2) {
+            width: 100%;
+          }
+  
+          &:nth-of-type(3) {
+            width: 75%;
+          }
+        }
+  
+        &.open {
+          span:nth-of-type(1) {
+            transform-origin: bottom;
+            transform: rotate(45deg) translate(8px, 0px);
+          }
+  
+          span:nth-of-type(2) {
+            transform-origin: top;
+            transform: rotate(-45deg);
+          }
+  
+          span:nth-of-type(3) {
+            transform-origin: bottom;
+            width: 50%;
+            transform: translate(30px, -11px) rotate(45deg);
+          }
+        }
+      }
+      &-overlay {
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 3;
+        // @include linear-gradient-background($white, $linear-color);
+        background-color: aqua;
+      }
+    }
+  }
+  
