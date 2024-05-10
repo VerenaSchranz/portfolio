@@ -10,7 +10,7 @@
     &-circle-little {
         @include circle(100px, $primary-color, $secondary-color);
         position: absolute;
-        top: 70px;
+        top: -110px;
     }
     &-flex {
         display: flex;
@@ -33,7 +33,7 @@
     .intro {
         padding: 150px 30px;
         &-circle-little {
-            top: 30px;
+            top: -90px;
         }
     }
 }

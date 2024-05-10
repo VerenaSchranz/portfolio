@@ -18,25 +18,34 @@
     &-mobile {
         display: none;
     }
-  // Stil für das Logo
+    &-language-switch {
+      display: flex;
+      color: #57E8A2;
+      align-items: center;
+      gap: 10px;
+      span {
+        font-weight: 700;
+        font-size: 25px;
+      }
+    }
   &-logo {
-    width: 70%; // Breite des Logos
+    width: 50%; 
     img {
-      width: 50px; // Breite des Logosbilds
+      width: 50px; 
       height: auto;
     }
   }
 
-  // Stil für das Menü
+
   &-menu {
-    width: 30%; // Breite des Menüs
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     a {
       text-decoration: none;
-      color: $primary-color; // Standardfarbe der Links aus colors.scss
+      color: $primary-color; 
       font-size: 23px;
       position: relative;
       transition: color 0.3s ease;
@@ -64,8 +73,28 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1200px) {
     .nav {
+        &-logo {
+            width: 20%;
+        }
+        &-menu {
+          width: 60%;
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    .nav {
+        &-language-switch {
+            display: flex;
+            color: $primary-color;
+            align-items: center;
+            gap:30px;
+            span {
+              display: none;
+            }
+        }
       &-menu {
         justify-content: flex-end;
         a {
@@ -130,13 +159,12 @@
       }
       &-overlay {
         width: 100vw;
+        @include linear-gradient-background($white, $linear-color);
         position: absolute;
         top: 0;
         right: 0;
         height: 100vh;
         z-index: 3;
-        // @include linear-gradient-background($white, $linear-color);
-        background-color: aqua;
       }
     }
   }
