@@ -5,7 +5,7 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { ImprintComponent } from './imprint/imprint.component';
 import { NavigationComponent } from './shared/components/navigation/navigation.component';
-
+import {TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +17,7 @@ import { NavigationComponent } from './shared/components/navigation/navigation.c
     FooterComponent,
     NavigationComponent,
     ImprintComponent,
+    TranslateModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
