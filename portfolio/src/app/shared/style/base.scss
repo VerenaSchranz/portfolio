@@ -2,10 +2,13 @@
 @import "../../shared/style/fonts.scss";
 
 $max-width-page: 1400px;
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: $primary-font;
   background-color: $white;
+
 }
 
 h1 {

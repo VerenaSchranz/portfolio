@@ -5,9 +5,15 @@
     <img src="assets/img/Icons/logo-white.svg" alt="Logo">
   </div>
   <div class="nav-menu">
-    <a href="#">About me</a>
-    <a href="#">Skill Set</a>
-    <a href="#">My work</a>
+    <a href="#aboutme">About me</a>
+    <a href="#skills">Skill Set</a>
+    <a href="#work">My Work</a>
+    <a href="#contact">Contact</a>
+    <div class="nav-language-switch">
+      <a href="#">EN</a>
+      <span>|</span>
+      <a href="#">DE</a>
+    </div> 
     <div class="nav-mobile" (click)="toggle()" [class.open]="isChecked">
       <span></span>
       <span></span>
@@ -19,16 +25,18 @@
     </div>
   </section>
   
-  <!-- Overlay für das Menü -->
   <div class="nav-overlay" *ngIf="showOverlay" (click)="closeMenu()">
-    <!-- Hier das Menü oder zusätzlichen Inhalt einfügen -->
     <div class="nav-logo">
-        <!-- <img src="assets/img/Icons/logo-white.svg" alt="Logo"> -->
       </div>
     <div class="nav-menu-content">
-        <a href="#">About me</a>
-          <a href="#">Skill Set</a>
-          <a href="#">My work</a>
+        <a href="#aboutme">About me</a>
+        <a href="#skills">Skill Set</a>
+        <a href="#work">My Work</a>
+        <a href="#contact">Contact</a>
+          <div class="nav-language-switch">
+            <a href="#">EN</a>|
+            <a href="#">DE</a>
+          </div>
     </div>
   </div>
   
