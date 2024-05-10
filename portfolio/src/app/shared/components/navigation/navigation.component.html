@@ -10,9 +10,9 @@
     <a href="#work">My Work</a>
     <a href="#contact">Contact</a>
     <div class="nav-language-switch">
-      <a href="#">EN</a>
+      <a (click)="changeLanguage('en')">EN</a>
       <span>|</span>
-      <a href="#">DE</a>
+      <a (click)="changeLanguage('de')">DE</a>
     </div> 
     <div class="nav-mobile" (click)="toggle()" [class.open]="isChecked">
       <span></span>
@@ -33,10 +33,11 @@
         <a href="#skills">Skill Set</a>
         <a href="#work">My Work</a>
         <a href="#contact">Contact</a>
-          <div class="nav-language-switch">
-            <a href="#">EN</a>|
-            <a href="#">DE</a>
-          </div>
+        <div class="nav-language-switch">
+          <a (click)="changeLanguage('en')">EN</a>
+          <span>|</span>
+          <a (click)="changeLanguage('de')">DE</a>
+        </div> 
     </div>
   </div>
   

@@ -5,11 +5,10 @@
       <div class="col-6">
         <h3>Got a problem to solve?</h3>
         <p>
-          Contact me through this form, I am interested in hearing from you,
-          knowing your ideas and contributing to your projects with my work.
+                   {{ "contact.intro" | translate }}
         </p>
-        <span class="contact-info">Need a Frontend developer?</span>
-        <span class="contact-info-bold"> Contact me!</span>
+        <span class="contact-info">{{ "contact.cta" | translate }}</span>
+        <span class="contact-info-bold"> {{ "contact.contactme" | translate }}</span>
         <div class="contact-circle-1"></div>
       </div>
       <div class="col-6">
@@ -33,11 +32,11 @@
               type="text"
               name="name"
               class="form__input"
-              placeholder="Your name"
+              placeholder="{{ 'contact.labelName' | translate }}"
               id="name"
               required
             />
-            <label for="name" class="form__label">Your name</label>
+            <label for="name" class="form__label">{{ "contact.labelName" | translate }}</label>
             <span
               *ngIf="nameInput.valid && (nameInput.dirty || nameInput.touched)"
               class="validOrNot"
@@ -64,7 +63,7 @@
                 nameInput.invalid && (nameInput.dirty || nameInput.touched)
               "
             >
-              Your name is required
+            {{ "contact.labelNameRequired" | translate }}
             </div>
           </div>
 
@@ -83,11 +82,11 @@
               name="email"
               class="form__input"
               id="email"
-              placeholder="Your email"
+              placeholder="{{ 'contact.labelEmail' | translate }}"
               required
               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
             />
-            <label for="email" class="form__label">Your email</label>
+            <label for="email" class="form__label">{{ 'contact.labelEmail' | translate }}</label>
             <span *ngIf="email.valid && email.touched" class="validOrNot">
               <img
                 src="../../../assets/img/Icons/text_box/done.svg"
@@ -103,8 +102,7 @@
             <div
               class="form__error-message"
               *ngIf="email.invalid && email.touched"
-            >
-              Please enter a valid email address
+            >{{ "contact.labelMailRequired" | translate }}
             </div>
           </div>
 
@@ -122,12 +120,12 @@
               minlength="4"
               name="message"
               class="form__input form__textarea"
-              placeholder="Your message"
+              placeholder="{{ 'contact.labelMessage' | translate }}"
               id="message"
               required
             ></textarea>
             <label for="message" class="form__label-message"
-              >Your message</label
+              >{{ "contact.labelMessage" | translate }}</label
             >
             <span *ngIf="message.valid && message.touched" class="validOrNot">
               <img
@@ -145,7 +143,7 @@
               class="form__error-message"
               *ngIf="message.invalid && message.touched"
             >
-              Your message is too short
+            {{ "contact.labelMessageRequired" | translate }}
             </div>
           </div>
 
@@ -163,17 +161,9 @@
             <label for="read" class="form__checkbox-label">
               <span class="form__checkbox-button"></span>
               <div class="privacy-div">
-                I've read the
-                <a class="privacy-div-link" href="#">privacy policy</a> and
-                agree to the processing of my data as outlined.
-                <div
-                  class="form__error-message"
-                  *ngIf="!readOrNot && isChecked"
-                  [class.checked]="isChecked"
-                  (click)="toggleCheckbox()"
-                >
-                  Please accept the privacy policy
-                </div>
+                {{ "contact.labelCheckbefore" | translate }}
+                <a class="privacy-div-link" href="#">{{ "contact.labelCheckLink" | translate }}</a> and
+                {{ "contact.labelCheckAfter" | translate }}
               </div>
             </label>
           </div>
