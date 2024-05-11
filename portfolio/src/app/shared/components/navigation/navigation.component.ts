@@ -8,25 +8,34 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   imports: [NgIf, TranslateModule, HttpClientModule],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss'
+  styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent {
-    isChecked = false;
-    
-    showOverlay = false;
+  isChecked: boolean = false;
+  isEnActive: boolean = true;
+  isDeActive: boolean = false;
+  showOverlay: boolean = false;
 
   constructor(public translateService: TranslateService) {}
 
   changeLanguage(langCode: string) {
     this.translateService.use(langCode);
+    if (langCode === 'en') {
+      this.isEnActive = true;
+      this.isDeActive = false;
+    } else if (langCode === 'de') {
+      this.isEnActive = false;
+      this.isDeActive = true;
+    }
   }
-    toggle() {
-      this.isChecked = !this.isChecked;
-      this.showOverlay = this.isChecked;
-    }
-  
-    closeMenu() {
-      this.isChecked = false; 
-      this.showOverlay = false;
-    }
+
+  toggle() {
+    this.isChecked = !this.isChecked;
+    this.showOverlay = this.isChecked;
+  }
+
+  closeMenu() {
+    this.isChecked = false;
+    this.showOverlay = false;
+  }
 }

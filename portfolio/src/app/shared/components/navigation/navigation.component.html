@@ -5,14 +5,14 @@
     <img src="assets/img/Icons/logo-white.svg" alt="Logo">
   </div>
   <div class="nav-menu">
-    <a href="#aboutme">About me</a>
-    <a href="#skills">Skill Set</a>
-    <a href="#work">My Work</a>
-    <a href="#contact">Contact</a>
+    <a class="nav-menu-link" href="#aboutme">About me</a>
+    <a class="nav-menu-link" class="nav-menu-link" href="#skills">Skill Set</a>
+    <a class="nav-menu-link" href="#work">My Work</a>
+    <a class="nav-menu-link" href="#contact">Contact</a>
     <div class="nav-language-switch">
-      <a (click)="changeLanguage('en')">EN</a>
-      <span>|</span>
-      <a (click)="changeLanguage('de')">DE</a>
+      <a (click)="changeLanguage('en')" [class.navLangActive]="isEnActive">EN</a>
+      <span class="nav-language-switch-desk">|</span>
+      <a (click)="changeLanguage('de')" [class.navLangActive]="isDeActive">DE</a>
     </div> 
     <div class="nav-mobile" (click)="toggle()" [class.open]="isChecked">
       <span></span>
@@ -34,9 +34,9 @@
         <a href="#work">My Work</a>
         <a href="#contact">Contact</a>
         <div class="nav-language-switch">
-          <a (click)="changeLanguage('en')">EN</a>
-          <span>|</span>
-          <a (click)="changeLanguage('de')">DE</a>
+          <a (click)="changeLanguage('en')"[class.navLangActive]="isEnActive">EN</a>
+          <span class="nav-language-switch-mobile">|</span>
+          <a (click)="changeLanguage('de')"[class.navLangActive]="isDeActive">DE</a>
         </div> 
     </div>
   </div>
