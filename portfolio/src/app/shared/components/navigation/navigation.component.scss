@@ -3,7 +3,22 @@
 @import "../../style/mixins.scss";
 
 // Stil für die gesamte Navigation
-
+.row-nav {
+  &.scrolled {
+    background-color: $primary-color;
+    height: 80px;
+    a.nav-menu-link, .nav-language-switch a,  .nav-language-switch-desk {
+      color: $white;
+    }
+    .nav-mobile span, a.navLangActive:after {
+      background-color: $white;
+    }
+ 
+    .nav-mobile.open span{
+      background-color: $primary-color;
+    }
+  }
+}
 .nav {
   height: 80px;
   position: absolute;
@@ -88,6 +103,7 @@
     }
     
   }
+
 }
 
 @media (max-width: 1200px) {
