@@ -47,6 +47,12 @@ span.form__checkbox-button {
   p {
     font-size: 16px;
   }
+  &-gototop {
+    position: absolute;
+    left: 0;
+    bottom: -57px;
+    cursor: pointer;
+  }
   &-info {
     color: $primary-color;
     &-bold {
@@ -347,9 +353,12 @@ span.form__checkbox-button {
   }
 
   .contact {
-    padding: 150px 30px;
+    padding: 180px 18px;
     &-circle-1 {
       bottom: -140%;
+    }
+    &-gototop {
+      bottom: -94px;
     }
   }
   .form {
@@ -371,7 +380,7 @@ span.form__checkbox-button {
 
 @media (max-width: 720px) {
   .contact {
-    padding: 0 18px 100px 18px;
+    padding: 0 18px 130px 18px;
    h2 {
     margin-bottom: 30px;
    }
