@@ -1,8 +1,29 @@
 {
-    "general": {
-        "hello": "Hallo"
+    "header": {
+        "hello": "Hello I'm Verena",
+        "title": "Frontend Developer"
     },
-    "home": {
-        "title": "Hallo, ich bin Verena"
-    }
+    "intro": {
+        "letswork": "I am a front-end developer living south of Munich. For several years now I have enjoyed realizing the ideas of designers and companies and accompanying their projects. Originally I am at home in CSS and JavaScript, but currently I am mainly looking for challenges in Angular and React! Please contact me if this could be a good fit for you and we can talk about it."
+    },
+    "myWork": {
+        "intro": "Below you will find an overview of my work.",
+        "join": "Task management system based on the Kanban model. Creation and organization of tasks including drag and drop function as well as ticket assignment and category structure",
+        "epl": "Jump and run game based on an object-oriented approach. Collecting coins, throwing objects and a special final boss fight!",
+        "crm": "Simple customer relationship management system with CRUD function"
+    },
+    "contact": {
+        "intro": "Do you have exciting projects and need support? ",
+        "cta": "I look forward to hearing from you!",
+        "contactme": " Contact me!",
+        "labelName": "Your Name",
+        "labelNameRequired": "Your name is required",
+        "labelEmail": "Your Mail",
+        "labelMailRequired": "Please enter a valid email address",
+        "labelMessage": "Your Message",
+        "labelMessageRequired": "Your message is too short",
+        "labelCheckbefore": "I've read the ",
+        "labelCheckLink": "privacy policy",
+        "labelCheckAfter": " and agree to the processing of my data as outlined."
+    }   
 }

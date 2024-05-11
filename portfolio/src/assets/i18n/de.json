@@ -1,8 +1,29 @@
 {
-    "general": {
-        "hello": "Hallo"
+    "header": {
+        "hello": "Hallo, ich bin Verena",
+        "title": "Frontend Developer"
     },
-    "home": {
-        "title": "Hallo, ich bin Verena"
-    }
+    "intro": {
+        "letswork": "Ich bin eine Front-end entwicklerin die südlich von München lebt. Seit bereits mehreren Jahren macht mir großen Spaß die Ideen von Designern und Firmen zu verwirklichen und ihre Projekte zu begleiten. Ursprünglich bin ich in CSS und JavaScript zu Hause, suche aber aktuell vor Allem Herausforderungen im Bereich Angular und React! Bitte kontaktieren Sie mich falls das für Sie gut passen könnte und wir sprechen darüber."
+    },
+    "myWork": {
+        "intro": "Folgend finden Sie eine Übersicht meiner Arbeit.",
+        "join": "Aufgabenmanagement-System nach dem Vorbild von Kanban. Erstellung und Organisation von Aufgaben inklusive Drag and Drop Funktion sowie Ticketzuweisung und Kategorieaufbau",
+        "epl": "Jump and run game based on an object-oriented approach. Collecting coins, throwing objects and a special final boss fight!",
+        "crm": "Einfaches Customer Relationship Management system mit CRUD Funktion"
+    },
+    "contact": {
+        "intro": "Sie haben spannende Projekte und brauchen Unterstützung?",
+        "cta": "Ich freue mich wenn Sie",
+        "contactme": " Kontakt mit mir aufnehmen!",
+        "labelName": "Name",
+        "labelNameRequired": "Ihr Name ist erforderlich.",
+        "labelEmail": "E-Mail",
+        "labelMailRequired": "Ihre E-Mail ist erforderlich.",
+        "labelMessage": "Nachricht",
+        "labelMessageRequired": "Ihre Nachricht ist zu kurz.",
+        "labelCheckbefore": "Ich habe die ",
+        "labelCheckLink": "Datenschutzrichtlinie",
+        "labelCheckAfter": "gelesen und stimme der Verarbeitung meiner Daten gemäß den darin beschriebenen Bedingungen zu."
+    }   
 }

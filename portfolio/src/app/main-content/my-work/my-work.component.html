@@ -5,8 +5,7 @@
         <div class="my-work-circle-little"></div>
         <h2>My work</h2>
         <p>
-          Explore a selection of my work here - Interact with projects to see my
-          skills in action.
+          {{ "myWork.intro" | translate }}
         </p>
       </div>
       <div class="col-6">
@@ -34,7 +33,7 @@
           <h5>{{ project.projectLanguage }}</h5>
         </div>
         <div class="my-work-div-content">
-          {{ project.content }}
+          {{ 'myWork.join' | translate }}
         </div>
         <div class="my-work-div-btn-row">
           <a
