@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -6,7 +6,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [NgIf, TranslateModule, HttpClientModule],
+  imports: [NgIf, TranslateModule, HttpClientModule, CommonModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
 })
@@ -15,7 +15,7 @@ export class NavigationComponent {
   isEnActive: boolean = true;
   isDeActive: boolean = false;
   showOverlay: boolean = false;
-
+  mobileNavImage = "assets/img/Icons/logo-white.svg";
   constructor(public translateService: TranslateService) {}
 
   changeLanguage(langCode: string) {
@@ -32,10 +32,18 @@ export class NavigationComponent {
   toggle() {
     this.isChecked = !this.isChecked;
     this.showOverlay = this.isChecked;
+
+    if (this.isChecked) {
+      this.mobileNavImage = 'assets/img/Icons/logo.svg'; 
+    } else {
+      this.mobileNavImage = 'assets/img/Icons/logo-white.svg';
+    }
   }
 
   closeMenu() {
     this.isChecked = false;
     this.showOverlay = false;
+
+    this.mobileNavImage = 'assets/img/Icons/logo-white.svg';
   }
 }
