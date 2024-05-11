@@ -11,13 +11,43 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './my-work.component.scss',
 })
 export class MyWorkComponent {
-  constructor(private translateService: TranslateService) {
+
+  projects = [
+    {
+      mockup: 'join.png',
+      name: 'Join',
+      projectLanguage: 'JavaScript | HTML | CSS',
+      translatedDescription: 'join',
+      link: 'join',
+      liveTest: '#',
+    },
+    {
+      mockup: 'pollo_loco.png',
+      name: 'Pollo Loco',
+      projectLanguage: 'JavaScript | HTML | CSS',
+      translatedDescription: 'epl',
+      link: 'El-Polo-Loco',
+      liveTest: '#',
+    },
+    {
+      mockup: 'simple_crm.png',
+      name: 'Simple CRM',
+      projectLanguage: 'Angular | Firebase',
+      translatedDescription: 'crm',
+      link: 'simple-crm',
+      liveTest: '#',
+    },
+  ];
+  constructor(private translateService: TranslateService) {}
+
+  ngOnInit(): void {
     this.translateProjectDescriptions();
   }
 
   translateProjectDescriptions(): void {
     this.projects.forEach((project) => {
-      this.translateService.get(project.translatedDescription).subscribe((translatedDesc: string) => {
+      const translationKey = `myWork.${project.translatedDescription}`;
+      this.translateService.get(translationKey).subscribe((translatedDesc: string) => {
         project.translatedDescription = translatedDesc;
       });
     });
@@ -26,31 +56,4 @@ export class MyWorkComponent {
   isEven(index: number): boolean {
     return index % 2 === 0;
   }
-
-  projects = [
-    {
-      mockup: 'join.png',
-      name: 'Join',
-      projectLanguage: 'JavaScript | HTML | CSS',
-      translatedDescription: 'myWork.join',
-      link: 'join',
-      liveTest: '#',
-    },
-    {
-      mockup: 'pollo_loco.png',
-      name: 'Pollo Loco',
-      projectLanguage: 'JavaScript | HTML | CSS',
-      translatedDescription: 'myWork.epl',
-      link: 'El-Polo-Loco',
-      liveTest: '#',
-    },
-    {
-      mockup: 'simple_crm.png',
-      name: 'Simple CRM',
-      projectLanguage: 'Angular | Firebase',
-      translatedDescription: 'myWork.crm',
-      link: 'simple-crm',
-      liveTest: '#',
-    },
-  ];
 }

@@ -25,5 +25,7 @@
         "labelCheckbefore": "I've read the ",
         "labelCheckLink": "privacy policy",
         "labelCheckAfter": " and agree to the processing of my data as outlined."
-    }   
+    },
+    "imprint": "<h1>Impressum</h1><p>Verena Schranz<br />Kaltschmiedweg 3<br />82544 Egling</p><h2>Kontakt</h2><p>Telefon: [Telefonnummer]<br />E-Mail: info.de</p><p>Quelle: <a href=\"https://www.e-recht24.de\">https://www.e-recht24.de</a></p><h2>Datenschutzerklärung</h2><!-- Weitere Inhalte hier einfügen -->"
+   
 }
