@@ -16,6 +16,7 @@ export class NavigationComponent {
   isDeActive: boolean = false;
   showOverlay: boolean = false;
 
+  mobileNavImage = "assets/img/Icons/logo-white.svg";
   constructor(public translateService: TranslateService) {}
 
   changeLanguage(langCode: string) {
@@ -32,10 +33,18 @@ export class NavigationComponent {
   toggle() {
     this.isChecked = !this.isChecked;
     this.showOverlay = this.isChecked;
+
+    if (this.isChecked) {
+      this.mobileNavImage = 'assets/img/Icons/logo.svg'; 
+    } else {
+      this.mobileNavImage = 'assets/img/Icons/logo-white.svg';
+    }
   }
 
   closeMenu() {
     this.isChecked = false;
     this.showOverlay = false;
+
+    this.mobileNavImage = 'assets/img/Icons/logo-white.svg';
   }
 }
