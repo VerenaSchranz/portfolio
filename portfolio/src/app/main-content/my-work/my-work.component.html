@@ -27,26 +27,26 @@
       </div>
       <div class="col-6">
         <div class="my-work-title">
-          <h4>{{ project.name }}</h4>
+          <h4>{{ project.name | translate }}</h4>
         </div>
         <div class="my-work-language">
-          <h5>{{ project.projectLanguage }}</h5>
+          <h5>{{ project.projectLanguage | translate}}</h5>
         </div>
         <div class="my-work-div-content">
-          {{ project.translatedDescription }}
+          {{ project.translatedDescription | translate }}
         </div>
         <div class="my-work-div-btn-row">
           <a
             class="button my-work-div-content-mobile-btn"
             target="_blank"
-            href="#{{ project.liveTest }}"
+            href="#{{ project.liveTest | translate}}"
           >
              Live test
           </a>
           <a
             class="button"
             target="_blank"
-            href="https://github.com/VerenaSchranz/{{ project.link }}"
+            href="https://github.com/VerenaSchranz/{{ project.link | translate}}"
           > Github</a>
         </div>
       </div>
