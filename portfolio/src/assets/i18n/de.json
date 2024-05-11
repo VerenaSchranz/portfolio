@@ -9,7 +9,7 @@
     "myWork": {
         "intro": "Folgend finden Sie eine Übersicht meiner Arbeit.",
         "join": "Aufgabenmanagement-System nach dem Vorbild von Kanban. Erstellung und Organisation von Aufgaben inklusive Drag and Drop Funktion sowie Ticketzuweisung und Kategorieaufbau",
-        "epl": "Jump and run game based on an object-oriented approach. Collecting coins, throwing objects and a special final boss fight!",
+        "epl": "Jump and Run Spiel basierend auf einem Objektorientierten Ansatz. Einsammeln von Münzen, werfen von Objekten und ein spezieller Endboss-Kampf!",
         "crm": "Einfaches Customer Relationship Management system mit CRUD Funktion"
     },
     "contact": {
@@ -25,5 +25,7 @@
         "labelCheckbefore": "Ich habe die ",
         "labelCheckLink": "Datenschutzrichtlinie",
         "labelCheckAfter": "gelesen und stimme der Verarbeitung meiner Daten gemäß den darin beschriebenen Bedingungen zu."
-    }   
+    }, 
+    "imprint": "<h1>Impressum</h1><p>Verena Schranz<br />Kaltschmiedweg 3<br />82544 Egling</p><h2>Kontakt</h2><p>Telefon: [Telefonnummer]<br />E-Mail: info.de</p><p>Quelle: <a href=\"https://www.e-recht24.de\">https://www.e-recht24.de</a></p><h2>Datenschutzerklärung</h2><!-- Weitere Inhalte hier einfügen -->"
+
 }
