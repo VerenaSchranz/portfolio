@@ -1,6 +1,6 @@
 import { CommonModule, NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -16,8 +16,12 @@ export class NavigationComponent {
   isDeActive: boolean = false;
   showOverlay: boolean = false;
   mobileNavImage = "assets/img/Icons/logo-white.svg";
+  isScrolled: boolean = false;
   constructor(public translateService: TranslateService) {}
-
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 0;
+  }
   changeLanguage(langCode: string) {
     this.translateService.use(langCode);
     if (langCode === 'en') {
