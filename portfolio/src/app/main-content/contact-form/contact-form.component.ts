@@ -85,7 +85,7 @@ export class ContactFormComponent {
   
     setTimeout(() => {
       successElement.classList.remove('success-visible');
-    }, 1000); 
+    }, 1500); 
   }
   
   

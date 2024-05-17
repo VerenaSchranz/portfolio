@@ -8,5 +8,4 @@ export const routes: Routes = [
   { path: 'imprint', component: ImprintComponent },
 ];
 
-
 export class AppRoutingModule { }
