@@ -21,7 +21,7 @@
       [ngClass]="{ 'my-work-div-reverse': odd }"
       *ngFor="let project of projects; let odd = odd"
     >
-      <div class="col-6">
+      <div data-aos="fade-left" class="col-6">
         <a href="{{ project.liveTest }}" target="_blank">
           <img
             src="assets/img/pc_mockup/{{ project.mockup }}"
@@ -29,7 +29,7 @@
           />
         </a>
       </div>
-      <div class="col-6">
+      <div data-aos="fade-right" class="col-6">
         <div class="my-work-title">
           <h4>{{ project.name | translate }}</h4>
         </div>

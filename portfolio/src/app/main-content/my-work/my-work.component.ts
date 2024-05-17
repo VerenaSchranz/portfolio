@@ -34,7 +34,7 @@ export class MyWorkComponent {
     },
     {
       mockup: 'simple_crm.png',
-      name: 'Simple CRM -COMING SOON',
+      name: 'COMING SOON',
       projectLanguage: 'Angular | Firebase',
       description: 'crm',
       link: 'simple-crm',

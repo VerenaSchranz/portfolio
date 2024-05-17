@@ -2,7 +2,7 @@
   <div class="main">
     <h2>Contact</h2>
     <div class="row-contact">
-      <div class="col-6">
+      <div data-aos="fade-right" class="col-6">
         <h3>Got a problem to solve?</h3>
         <p>
                    {{ "contact.intro" | translate }}
@@ -11,7 +11,7 @@
         <span class="contact-info-bold"> {{ "contact.contactme" | translate }}</span>
         <div class="contact-circle-1"></div>
       </div>
-      <div class="col-6">
+      <div data-aos="fade-left" class="col-6">
         <form
           (ngSubmit)="onSubmit(contactForm)"
           #contactForm="ngForm"
