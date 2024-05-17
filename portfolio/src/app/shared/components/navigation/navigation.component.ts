@@ -30,7 +30,7 @@ export class NavigationComponent {
   
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 0;
+    this.isScrolled = window.scrollY > 1;
   }
   changeLanguage(langCode: string) {
     this.translateService.use(langCode);
