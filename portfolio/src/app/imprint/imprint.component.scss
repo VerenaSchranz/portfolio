@@ -1,0 +1,18 @@
+@import "../../../src/app/shared/style/colors.scss"; 
+
+.row-imprint {
+    padding: 180px 18px;
+    position: relative; 
+    h3 {
+        color: $primary-color;
+        text-align: left;
+        font-size: 45px;
+    }
+    h1, h2 {
+        font-size: 60px;
+    }
+    li {
+        font-size: 23px;
+        line-height: 1.8;
+    }
+}

@@ -1,6 +1,6 @@
-<section [class.scrolled]="isScrolled" class="row-nav">
+<section [ngClass]="{'nav-imprint-page': isImprintPage}" [class.scrolled]="isScrolled" class="row-nav">
   <div class="main">
-    <div class="nav">
+    <div  class="nav">
       <div class="nav-logo">
         <a href="/"><img [src]="mobileNavImage" alt="Mobile Navigation Image"></a>
       </div>

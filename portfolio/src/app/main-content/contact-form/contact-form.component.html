@@ -162,7 +162,7 @@
               <span class="form__checkbox-button"></span>
               <div class="privacy-div">
                 {{ "contact.labelCheckbefore" | translate }}
-                <a class="privacy-div-link" href="#">{{ "contact.labelCheckLink" | translate }}</a> and
+                <a class="privacy-div-link" routerLink="/imprint">{{ "contact.labelCheckLink" | translate }}</a> and
                 {{ "contact.labelCheckAfter" | translate }}
               </div>
             </label>
@@ -178,7 +178,7 @@
               class="button form__btn-submit validbtn"
               [disabled]="!isFormValid(contactForm)"
             >
-              Send message :)
+            {{ 'buttontxt' | translate }} :)
             </button>
           </div>
           <div class="contact-circle-2"></div>

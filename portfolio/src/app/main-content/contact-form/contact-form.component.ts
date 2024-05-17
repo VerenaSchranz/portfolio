@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule, CommonModule, TranslateModule, HttpClientModule],
+  imports: [FormsModule, CommonModule, TranslateModule, HttpClientModule, RouterLink],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss'
 })
@@ -41,13 +42,11 @@ export class ContactFormComponent {
   onSubmit(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {
       if (!this.readOrNot) {
-        // Fehlerbehandlung, da die Datenschutzrichtlinie nicht akzeptiert wurde
         console.error('Please accept the privacy policy');
 
         return;
       }
   
-      // Formular ist gültig und bereit zum Absenden
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
@@ -102,11 +101,5 @@ export class ContactFormComponent {
     };
   }
 
-  goToPrivacyPolicy() {
-  /*   this.formDataService.saveFormData(this.contactData);
-    this.router.navigateByUrl('/privacyPolicy').then(() => {
-      window.scrollTo(0, 0);
-    }); */
-  }
 }
 
