@@ -19,8 +19,8 @@ export class MyWorkComponent {
       name: 'Join',
       projectLanguage: 'JavaScript | HTML | CSS',
       description: 'join',
-      link: 'join',
-      liveTest: '#',
+      link: 'join-kanban',
+      liveTest: 'https://join.verenaschranz.de/',
       translatedDescription: '',
     },
     {
@@ -28,19 +28,19 @@ export class MyWorkComponent {
       name: 'Pollo Loco',
       projectLanguage: 'JavaScript | HTML | CSS',
       description: 'epl',
-      link: 'El-Polo-Loco',
-      liveTest: '#',
+      link: 'El_Pollo_Loco',
+      liveTest: 'https://el-pollo-loco.verenaschranz.de/',
       translatedDescription: '',
     },
     {
       mockup: 'simple_crm.png',
-      name: 'Simple CRM',
+      name: 'Simple CRM -COMING SOON',
       projectLanguage: 'Angular | Firebase',
       description: 'crm',
       link: 'simple-crm',
-      liveTest: '#',
+      liveTest: 'https://simple-crm.verenaschranz.de/',
       translatedDescription: '',
-    },
+    }, 
   ];
 
   private languageChangeSubscription: Subscription | undefined;

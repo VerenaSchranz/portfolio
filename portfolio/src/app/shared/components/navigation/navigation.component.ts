@@ -2,6 +2,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Component, HostListener } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -11,13 +12,22 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './navigation.component.scss',
 })
 export class NavigationComponent {
+  isImprintPage: boolean = false;
   isChecked: boolean = false;
   isEnActive: boolean = true;
   isDeActive: boolean = false;
   showOverlay: boolean = false;
   mobileNavImage = "assets/img/Icons/logo-white.svg";
   isScrolled: boolean = false;
-  constructor(public translateService: TranslateService) {}
+
+  constructor(public translateService: TranslateService, private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isImprintPage = event.url === '/imprint';
+      }
+    });
+  }
+  
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 0;
