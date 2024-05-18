@@ -7,6 +7,7 @@
 
 .header {
   position: relative;
+  overflow: hidden;
   height: 100vh;
   @include linear-gradient-background($white, $linear-color);  width: 100%;
   &-btn-box {

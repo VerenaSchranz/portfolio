@@ -29,12 +29,12 @@
 
   &.scrolled {
     background-color: $primary-color;
-    height: 150px;
-    top: 30px;
-    position: sticky;
+    height: 80px;
+    top: 0px;
+    position: relative;
     // max-width: 1400px;
     div.nav {
-      top: 70px;
+      top: 0px;
     }
 
     a.nav-menu-link,
@@ -142,7 +142,7 @@
 @media (max-width: 1260px) {
   .nav, .scrolled {
 
-    justify-content: space-evenly;
+    justify-content: space-between;
     &-logo {
       width: 20%;
     }
