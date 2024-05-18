@@ -75,17 +75,18 @@
               valid: email.valid && email.touched
             }"
           >
-            <input
-              #email="ngModel"
-              [(ngModel)]="contactData.email"
-              type="email"
-              name="email"
-              class="form__input"
-              id="email"
-              placeholder="{{ 'contact.labelEmail' | translate }}"
-              required
-              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
-            />
+          <input
+          #email="ngModel"
+          [(ngModel)]="contactData.email"
+          type="email"
+          name="email"
+          class="form__input"
+          id="email"
+          placeholder="{{ 'contact.labelEmail' | translate }}"
+          required
+          pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+        />
+        
             <label for="email" class="form__label">{{ 'contact.labelEmail' | translate }}</label>
             <span *ngIf="email.valid && email.touched" class="validOrNot">
               <img
