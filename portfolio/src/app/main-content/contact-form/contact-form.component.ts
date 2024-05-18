@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -13,7 +13,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
-  constructor(public translateService: TranslateService) {}
+
+  constructor(public translateService: TranslateService, private router: Router) {}
+
 
   http = inject(HttpClient);
   privacyPolicyErrorVisible: boolean = false;
@@ -38,6 +40,12 @@ export class ContactFormComponent {
       },
     },
   };
+
+  navigateToImprint() {
+    this.router.navigateByUrl('/imprint').then(() => {
+      window.scrollTo(0, 0); 
+    });
+  }
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {
