@@ -6,7 +6,7 @@
 .intro {
     padding: 180px 18px;
     position: relative;
-    
+    overflow: hidden;
     &-circle-little {
         @include circle(100px, $primary-color, $secondary-color);
         position: absolute;

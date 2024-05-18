@@ -32,6 +32,7 @@ span.form__checkbox-button {
 .contact {
   padding: 100px 30px;
   @include linear-gradient-background($white, $linear-color);
+  overflow: hidden;
   h2 {
     margin-bottom: 80px;
   }
