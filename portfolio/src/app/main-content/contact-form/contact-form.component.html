@@ -1,4 +1,4 @@
-<section id="contact" class="contact">
+<section class="contact">
   <div class="main">
     <h2>Contact</h2>
     <div class="row-contact">
@@ -162,7 +162,7 @@
               <span class="form__checkbox-button"></span>
               <div class="privacy-div">
                 {{ "contact.labelCheckbefore" | translate }}
-                <a class="privacy-div-link" routerLink="/imprint">{{ "contact.labelCheckLink" | translate }}</a> and
+                <a class="privacy-div-link" (click)="navigateToImprint()" routerLink="/imprint">{{ "contact.labelCheckLink" | translate }}</a> and
                 {{ "contact.labelCheckAfter" | translate }}
               </div>
             </label>
