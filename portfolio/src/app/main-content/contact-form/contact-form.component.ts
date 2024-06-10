@@ -58,7 +58,7 @@ export class ContactFormComponent {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log('Form submitted successfully');
+            // console.log('Form submitted successfully');
             ngForm.resetForm();
             this.showSuccessMessage();
           },
@@ -66,7 +66,7 @@ export class ContactFormComponent {
             console.error('Error submitting form:', error);
           },
           complete: () => {
-            console.info('Post request complete');
+            // console.info('Post request complete');
           }
         });
     }
