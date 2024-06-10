@@ -5,7 +5,7 @@
         "title": "Frontend Developer"
     },
     "intro": {
-        "letswork": "I am a front-end developer living south of Munich. For several years now I have enjoyed realizing the ideas of designers and companies and accompanying their projects. Originally I am at home in CSS and JavaScript, but currently I am mainly looking for challenges in Angular and React! Please contact me if this could be a good fit for you and we can talk about it."
+        "letswork": "I am a front-end developer living south of Munich. For several years now, I have enjoyed realizing the ideas of designers and companies and accompanying their projects. Originally, I am at home in CSS and JavaScript, but currently I am mainly looking for challenges in Angular and React! Please contact me if this could be a good fit for you and we can talk about it."
     },
     "myWork": {
         "intro": "Below you will find an overview of my work.",
@@ -14,6 +14,7 @@
         "crm": "Simple customer relationship management system with CRUD function"
     },
     "contact": {
+        "problem": "Got a problem to solve?",
         "intro": "Do you have exciting projects and need support? ",
         "cta": "I look forward to hearing from you!",
         "contactme": " Contact me!",
