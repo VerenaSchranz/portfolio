@@ -248,7 +248,8 @@
         left: -10%;
       }
       &-circle-4 {
-        top: 82%;
+        // top: 82%;
+        top: 77%;
         left: 0%;
     
       }
@@ -284,6 +285,7 @@
         @include circle(300px, $primary-color, $secondary-color);
       }
       &-circle-4 {
+        top: 67%;
         left: -20%;
     
       }
@@ -345,11 +347,13 @@
             left: -105px;
           }
           &-circle-2 {
-            top: 44%;
+            // top: 44%;
+            top: 55%;
           }
           &-circle-4 {
             left: -20%;
-            top: 76%;
+            // top: 76%;
+            top: 63%;
           }
 
         }

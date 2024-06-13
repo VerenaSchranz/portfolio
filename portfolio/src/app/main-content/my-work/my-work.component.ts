@@ -32,15 +32,15 @@ export class MyWorkComponent {
       liveTest: 'https://el-pollo-loco.verenaschranz.de/',
       translatedDescription: '',
     },
-    {
-      mockup: 'simple_crm.png',
-      name: 'COMING SOON',
-      projectLanguage: 'Angular | Firebase',
-      description: 'crm',
-      link: 'simple-crm',
-      liveTest: 'https://simple-crm.verenaschranz.de/',
-      translatedDescription: '',
-    }, 
+    // {
+    //   mockup: 'simple_crm.png',
+    //   name: 'COMING SOON',
+    //   projectLanguage: 'Angular | Firebase',
+    //   description: 'crm',
+    //   link: 'simple-crm',
+    //   liveTest: 'https://simple-crm.verenaschranz.de/',
+    //   translatedDescription: '',
+    // }, 
   ];
 
   private languageChangeSubscription: Subscription | undefined;
